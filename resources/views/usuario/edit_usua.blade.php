@@ -84,7 +84,7 @@
                                                         <form method="POST" role="form" action="{{ url("usuario/{$user->id}") }}">
                                                             {{-- {{ @method('PUT') }} --}}
                                                             {{ method_field('PUT') }}
-                                                            @csrf
+                                                            {{ csrf_field() }}
                                                             <div class="form-group">
                                                                 <label class="control-label">Nombre</label>
                                                                 <input type="text" value="{{ $user->name }}" placeholder="{{ $user->name }}" class="form-control" name="name"/> </div>
