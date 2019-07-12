@@ -23,7 +23,11 @@ Route::get('/usuarios/nuevo', function () {
     return view('usuario.agregar_usua');
 });
 
-Route::get('/prueba', function () {
+Route::get('usuario/prueba', function () {
+    return view('usuario.prueba');
+});
+
+Route::get('libro/prueba', function () {
     return view('biblioteca.prueba');
 });
 
