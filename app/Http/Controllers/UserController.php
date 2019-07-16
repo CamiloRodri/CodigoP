@@ -109,8 +109,9 @@ class UserController extends Controller
         return view('usuario.edit_usua', compact('user', 'rol'));
     }
 
-    public function delete()
+    public function destroy(User $user)
     {
-
+        $user->delete();
+        return redirect()->route('usuario.list');
     }
 }

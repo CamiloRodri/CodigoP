@@ -103,13 +103,22 @@
                                             </button>
                                             <ul class="dropdown-menu pull-left" role="menu">
                                                 <li>
-                                                    <a href=" {{ route('usuario.show', ['id' => $user->id]) }}">
+                                                    <a href="{{ route('usuario.show', ['id' => $user->id]) }}">
                                                         <i class="icon-docs"></i> Editar </a>
                                                 </li>
                                                 <li>
                                                     <a href="javascript:;">
                                                         <i class="icon-tag"></i> Eliminar </a>
                                                 </li>
+                                                <li>
+                                                    <form action="{{ route('usuario.destroy', ['id' => $user->id]) }}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <i class="icon-tag"></i>
+                                                        <button type="submit">Eliminar</button>
+                                                    </form>
+                                                </li>
+
                                             </ul>
                                         </div>
                                     </td>

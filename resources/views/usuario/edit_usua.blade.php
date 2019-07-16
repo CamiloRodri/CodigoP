@@ -13,7 +13,6 @@
                                 <div class="portlet light profile-sidebar-portlet ">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class="profile-userpic">
-                                        
                                         <img src="../{{ $user->foto }}" class="img-responsive" alt=""> </div> 
                                         {{-- <img src="{{ asset('assets/pages/img/avatars/team1.jpg') }}" class="img-responsive" alt=""> </div> --}}
                                     <!-- END SIDEBAR USERPIC -->

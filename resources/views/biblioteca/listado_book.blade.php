@@ -74,7 +74,7 @@
                                                     <div class="mt-overlay">
                                                         <h2>{{ $libro->titulo }}</h2>
                                                         <p>
-                                                            <a class="mt-info uppercase btn default btn-outline" href="#">Leer Mas</a>
+                                                            <a class="mt-info uppercase btn default btn-outline" href="{{ route('libro.show', ['id' => $libro->id]) }}">Leer Mas</a>
                                                         </p>
                                                     </div>
                                                 </div>

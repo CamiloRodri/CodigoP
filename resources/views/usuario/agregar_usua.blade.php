@@ -15,7 +15,7 @@
                     <!-- BEGIN FORM-->
 
                     <form method="POST" action="{{ url('crear') }}" id="form_sample_2" class="form-horizontal">
-                        @csrf
+                        {{ csrf_field() }}
                         <div class="form-body">
                             <div class="alert alert-danger display-hide">
                                 <button class="close" data-close="alert"></button> Tienes algunos errores. Por favor, comprueba tu información. </div>
