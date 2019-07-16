@@ -1,5 +1,5 @@
 
-# Biblioteca
+# Biblioteca - UdeC Facatativá
 
 Sistema de Información para el Apoyo de la Biblioteca Universitaria - UdeC Facatativá
 
@@ -27,35 +27,42 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
 2- Inicializar GifFlow y hacer Pull con la rama develop
    (rama la cual se trabajara en el proyecto)
    
-3. $ composer install  
+3- $ composer install  
 
-4- Copiar el archivo .env.example 
+4- $ composer require zizaco/entrust
+
+5- $ composer require zizaco/entrust:dev-laravel-5
+
+6- $ php artisan vendor:publish
+
+   Seleccionar Opción de Zizaco/Entrust
+
+7- $ composer require barryvdh/laravel-debugbar --dev
+
+8- Copiar el archivo .env.example 
    (.env - copia.example) y cambiar el nombre a .env 
    
-5- Dejar la configuracion DB de developer
+9- Dejar la configuracion DB de developer
    ejemplo
    
    DB_HOST_DEVELOPER=127.0.0.1
    DB_DATABASE_DEVELOPER=biblioteca
    DB_USERNAME_DEVELOPER=root
    DB_PASSWORD_DEVELOPER=123
-   
-   
 
-5- Crear la base de datos con el respectivo nombre asignado en .env	
+10- Crear la base de datos con el respectivo nombre asignado en .env	
    y configurar el archivo .env ejemplo
    
    DB biblioteca
    
-6- $ php artisan key:generate
-7- $ php artisan storage:link
-8- Migrar las bases de datos de developer y el modulo asignado ejemplo
+11- $ php artisan key:generate
+12- $ php artisan storage:link
+13- Migrar las bases de datos de developer y el modulo asignado ejemplo
    
     $ php artisan migrate:fresh --seed
     
  
 ```
-
 
 ### Herramientas
 
@@ -70,7 +77,7 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
 
 * <a href="https://styde.net/">Styde</a>
 * <a href="https://www.youtube.com/channel/UC07xim4Gg8kOk3uZwMrGNeQ/playlists">YouTube - Raul Palacios</a>
-* <a href="https://laravel.com/docs/5.4">Documentación Laravel 5.4</a>
+* <a href="https://laravel.com/docs/5.5">Documentación Laravel 5.5</a>
 * <a href="https://mailtrap.io/">Pruebas de Email</a>
 * <a href="https://wkhtmltopdf.org/downloads.html">Binarios Snappy</a>
 * <a href="https://github.com/MicrosoftArchive/redis/releases">Redis Windows</a>

@@ -37,6 +37,22 @@
                             <span class="title">Visión</span>
                         </a>
                     </li>
+                    @if(Entrust::can('modificar-mision'))
+                    <li class="nav-item start ">
+                        <a href="{{ asset('vision') }}" class="nav-link ">
+                            <i class="icon-bulb"></i>
+                            <span class="title">Modificar Misión</span>
+                        </a>
+                    </li>
+                    @endif
+                    @if(Entrust::can('modificar-vision'))
+                    <li class="nav-item start ">
+                        <a href="{{ asset('vision') }}" class="nav-link ">
+                            <i class="icon-bulb"></i>
+                            <span class="title">Modificar Visión</span>
+                        </a>
+                    </li>
+                    @endif
                 </ul>
             </li>
             
@@ -60,6 +76,11 @@
                     <li class="nav-item  ">
                         <a href="{{ asset('libros') }}" class="nav-link ">
                             <span class="title">Agregar Libros</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a href="{{ asset('libros') }}" class="nav-link ">
+                            <span class="title">Agregar Autores</span>
                         </a>
                     </li>
                 </ul>

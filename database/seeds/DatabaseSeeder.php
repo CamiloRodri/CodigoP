@@ -17,10 +17,12 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(UsersTableSeeder::class);
         $this->call(RolSeeder::class);
-        $this->call(UserSeeder::class);
         $this->call(AutorSeeder::class);
         $this->call(LibroSeeder::class);
         $this->call(EjemplarSeeder::class);
+        $this->call(RoleSeeder::class);
+        $this->call(PermissionSeeder::class);
+        $this->call(UserSeeder::class);
     }
 
 
