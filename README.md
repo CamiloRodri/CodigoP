@@ -1,7 +1,7 @@
 
 # Biblioteca
 
-Sistema de Información para el Apoyo de la Biioteca Universitaria - UdeC Facatativá
+Sistema de Información para el Apoyo de la Biblioteca Universitaria - UdeC Facatativá
 
 ### Requerimientos
 
@@ -33,7 +33,7 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
    (.env - copia.example) y cambiar el nombre a .env 
    
 5- Dejar la configuracion DB de developer
-   y del modulo asignado (Eliminar los demas modulos) ejemplo
+   ejemplo
    
    DB_HOST_DEVELOPER=127.0.0.1
    DB_DATABASE_DEVELOPER=biblioteca
@@ -56,27 +56,6 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
  
 ```
 
-### Actualización Laravel 5.5
-
-```sh
-1- composer update
-2- php artisan package:discover
-```
-
-### Instalacion Node
-
-Activación de notificaciones de tiempo real (No es obligatorio)
-
-```sh
-1- Instalar Redis-x64-3.2.100.msi (Material de apoyo / Redis Windows)
-2- Instalar Node.js V8.4.0 (Material de apoyo / Node.js)
-3- $ npm install
-3- Verificar cambios en el archivo .env.example
-4- Inicializar el servidor de node
-   
-5- Ejecutar los Queues
-    $ php artisan queue:work
-```
 
 ### Herramientas
 
