@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Rol;
 use Illuminate\Support\Facades\DB;
-use Debugbar\Debugbar;
+//use Debugbar\Debugbar;
 // use vendor\barryvdh\laravel-debugbar\config\debugbar;
 
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Auth;
-// use Barryvdh\Debugbar;
+use Barryvdh\Debugbar;
+
+//use DebugBar\DataCollector\MemoryCollector;
+use DebugBar\StandardDebugBar;
 
 class UserController extends Controller
 {
@@ -23,17 +26,29 @@ class UserController extends Controller
 
     	// $users = DB::table('users')->get();
         // app('debugbar')->error('Watch out..'); 
-        // app('debugbar')->isEnabled();
-        // app('debugbar')->dissable();
-        app('debugbar')->addMessage('Hola bb!!');
+        //app('debugbar')->isEnabled();
+        //app('debugbar')->dissable();
+        //app('debugbar')->addMessage('Hola bb!!');
         // app('debugbar')->info($users);collectors
-        app('debugbar')->info(app('debugbar'));
-        app('debugbar')->info(app('debugbar')->boot());
+                         //app('debugbar')->info(app('debugbar'));
+        //app('debugbar')->info(app('debugbar')->boot());
+                         //app('debugbar')->getName();
         // app('debugbar')->collectConsole(); collect
+            //Edward
+                // $debugbar = new StandardDebugBar();
+                // $debugbarRenderer = $debugbar->getJavascriptRenderer();
+                // dd($debugbar['memory']->collect());
+                //dd($debugbar['time']->collect());
+                //dd($debugbar['memory']->getPeakUsage());
+                
+            //
         $notification = array(
             'message' => 'Lista de Usuarios!', 
             'alert-type' => 'success'
         );
+        // dd(MemoryCollector::getRealUsage());
+        
+        //dd(MemoryCollector::getName());
         // dd(array_get($notification, 'message'));
         // $notification = [
         //     'message' => 'Lista de Usuarios!', 

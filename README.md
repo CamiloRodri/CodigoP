@@ -34,8 +34,7 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
 5- $ composer require zizaco/entrust:dev-laravel-5
 
 6- $ php artisan vendor:publish
-
-   Seleccionar Opción de Zizaco/Entrust
+   (Seleccionar Opción de Zizaco/Entrust, y Enter)
 
 7- $ composer require barryvdh/laravel-debugbar --dev
 
@@ -51,7 +50,8 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
    DB_PASSWORD_DEVELOPER=123
 
 10- Crear la base de datos con el respectivo nombre asignado en .env	
-   y configurar el archivo .env ejemplo
+   y configurar el archivo .env 
+   ejemplo
    
    DB biblioteca
    

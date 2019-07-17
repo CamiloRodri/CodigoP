@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/deb', function () {
+    return view('deb');
+});
+
 Route::get('/index', function () {
     return view('login');
 });
@@ -71,3 +75,7 @@ Route::get('/vision', function () {
 Route::get('/libros', 'LibroController@index')->name('libro.list');
 
 Route::get('/libros/{libro}', 'LibroController@show')->name('libro.show');
+
+Route::get('/nuevolibro', 'LibroController@create')->name('libro.create');
+
+Route::post('/crearlibro', 'LibroController@store');
