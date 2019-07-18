@@ -70,7 +70,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="mt-overlay-6">
-                                                    <img src="../{{ $libro->foto }}" width="500" height="250"/>
+                                                    <img src="../images/Libros/{{ $libro->foto }}" width="500" height="250"/>
                                                     <div class="mt-overlay">
                                                         <h2>{{ $libro->titulo }}</h2>
                                                         <p>

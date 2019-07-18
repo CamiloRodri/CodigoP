@@ -18,7 +18,7 @@ class LibroSeeder extends Seeder
         Libro::create([
     		'titulo' => 'Satanas',
     		'paginas' => 'Cundinamarca',
-            'foto' => 'images/Libros/satanas.jpg',
+            'foto' => 'satanas.jpg',
             'descripcion' => 'Una mujer hermosa e ingenua que roba con destreza a altos ejecutivos, un pintor habitado por fuerzas misteriosas, y un sacerdote que se enfrenta a un caso de posesión demoníaca en La Candelaria, el barrio colonial de Bogotá… historias que se tejen en torno a la de Campo Elías, héroe de la guerra de Vietnam, quien inicia su particular descenso a los infiernos obsesionado por la dualidad entre el bien y el mal, entre Jekyll y Hyde, y se convertirá en un ángel exterminador. 
                              
                             Satanás es una novela sobre la oscura presencia de lo maligno en la vida cotidiana. El telón de fondo es un paisaje roto, el de la Colombia de hoy, y una ciudad, Bogotá, por cuyas calles van y vienen, de forma errática, condenados a expiar una interminable culpa, los personajes de este inquietante relato, en el que escenas conmovedoras se mezclan con otras de descarnada violencia. 

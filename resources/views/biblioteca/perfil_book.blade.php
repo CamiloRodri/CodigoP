@@ -38,7 +38,7 @@
             <div class="col-md-3">
                 <ul class="list-unstyled profile-nav">
                     <li>
-                        <img src="../{{ $libro->foto }}" width="500" height="230" class="img-responsive pic-bordered" alt="" />
+                        <img src="../images/Libros/{{ $libro->foto }}" width="500" height="230" class="img-responsive pic-bordered" alt="" />
                        {{--  <a href="javascript:;" class="profile-edit"> </a> --}}
                     </li>
                     <li>

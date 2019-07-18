@@ -29,19 +29,23 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
    
 3- $ composer install  
 
+   (Del Punto 4 al 8, favor omitir, lo siguiente es documental. Saltar al Punto 9)
+   -(Punto [4 6] , instalacion Entrust en Composer)
 4- $ composer require zizaco/entrust
 
 5- $ composer require zizaco/entrust:dev-laravel-5
 
 6- $ php artisan vendor:publish
    (Seleccionar Opción de Zizaco/Entrust, y Enter)
-
+   -(Punto [7] , instalacion Debugbar en Composer)
 7- $ composer require barryvdh/laravel-debugbar --dev
+   -(Punto [8] , instalacion ImageFile en Composer)
+8- $ composer require intervention/image
 
-8- Copiar el archivo .env.example 
+9- Copiar el archivo .env.example 
    (.env - copia.example) y cambiar el nombre a .env 
    
-9- Dejar la configuracion DB de developer
+10- Dejar la configuracion DB de developer
    ejemplo
    
    DB_HOST_DEVELOPER=127.0.0.1
@@ -49,15 +53,15 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
    DB_USERNAME_DEVELOPER=root
    DB_PASSWORD_DEVELOPER=123
 
-10- Crear la base de datos con el respectivo nombre asignado en .env	
+11- Crear la base de datos con el respectivo nombre asignado en .env	
    y configurar el archivo .env 
    ejemplo
    
    DB biblioteca
    
-11- $ php artisan key:generate
-12- $ php artisan storage:link
-13- Migrar las bases de datos de developer y el modulo asignado ejemplo
+12- $ php artisan key:generate
+13- $ php artisan storage:link
+14- Migrar las bases de datos de developer y el modulo asignado ejemplo
    
     $ php artisan migrate:fresh --seed
     
