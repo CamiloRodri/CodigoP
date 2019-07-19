@@ -64,7 +64,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item  ">
-                        <a href="{{ asset('libros') }}" class="nav-link ">
+                        <a href="{{ route('libro.list') }}" class="nav-link ">
                             <span class="title">Libros</span>
                         </a>
                     </li>
@@ -74,12 +74,12 @@
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="{{ asset('libro/nuevo') }}" class="nav-link ">
+                        <a href="{{ route('libro.create') }}" class="nav-link ">
                             <span class="title">Agregar Libros</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="{{ asset('libro') }}" class="nav-link ">
+                        <a href="{{ route('autor.create') }}" class="nav-link ">
                             <span class="title">Agregar Autores</span>
                         </a>
                     </li>

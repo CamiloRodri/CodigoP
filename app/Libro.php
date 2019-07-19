@@ -10,6 +10,6 @@ class Libro extends Model
     protected $table = 'libro';
 
     protected $fillable = [
-        'titulo', 'paginas', 'foto', 'descripcion', 'calificacion', 'autor_id'
+        'titulo', 'paginas', 'foto', 'descripcion', 'calificacion', 'autor_id', 'fecha_publicacion'
     ];
 }

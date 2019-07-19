@@ -1,20 +1,20 @@
-@extends ('admin.header')
+@extends('admin.header')
 
-@section('content')               
-    <div class="row">
+@section('content')
+	<div class="row">
         <div class="col-md-12">
             <!-- BEGIN VALIDATION STATES-->
             <div class="portlet light portlet-fit portlet-form ">
                 <div class="portlet-title">
                     <div class="caption">
                         <i class="icon-bubble font-green"></i>
-                        <span class="caption-subject font-green bold uppercase">Agregar Libro</span>
+                        <span class="caption-subject font-green bold uppercase">Agregar Autor</span>
                     </div>
                 </div>
                 <div class="portlet-body">
                     <!-- BEGIN FORM-->
 
-                    <form method="POST" action="{{ url('crearlibro') }}" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+                    <form method="POST" action="{{ url('crearautor') }}" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-body">
                             {{-- <div class="alert alert-danger display-hide">
@@ -22,99 +22,47 @@
                             <div class="alert alert-success display-hide">
                                 <button class="close" data-close="alert"></button> La Informacion es Correcta! </div> --}}
                             <div class="form-group  margin-top-20">
-                                <label id="name" class="control-label col-md-3">Nombre Libro
+                                <label id="name" class="control-label col-md-3">Nombre Autor
                                     <span class="required"> * </span> 
                                 </label>
                                 <div class="col-md-4">
-                                    @if($errors->has('titulo'))
+                                    @if($errors->has('name_autor'))
                                             <div class="form-group has-error">
                                                 <div class="col-md-12">
                                                     <div class="input-icon right">
                                                         <i class="fa fa-warning tooltips" data-original-title="Esta campo es requerido."></i>
-                                                        <input type="text" class="form-control" name="titulo" value="{{ old('titulo')}}" /> 
+                                                        <input type="text" class="form-control" name="name_autor" value="{{ old('name_autor')}}" /> 
                                                     </div>
                                                 </div>
                                             </div>
                                     @else
-                                        <input type="text" name="titulo" class="form-control" value="{{ old('titulo')}}"/>
-                                    @endif 
-                                </div>
-                            </div>
-                            <div class="form-group  margin-top-20">
-                                <label class="control-label col-md-3">Numero de Paginas
-                                    <span class="required"> * </span>
-                                </label>
-                                <div class="col-md-4">
-                                        @if($errors->has('paginas'))
-                                            <div class="form-group has-error">
-                                                <div class="col-md-12">
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-warning tooltips" data-original-title="Esta campo es requerido."></i>
-                                                        <input type="text" name="paginas" class="form-control" value="{{ old('paginas')}}"/>
-                                                     </div>
-                                                </div>
-                                            </div>
-                                        @else
-                                            <input type="text" name="paginas" class="form-control" value="{{ old('paginas')}}"/>
-                                        @endif 
-                                </div>
-                            </div>
-
-                            <div class="form-group  margin-top-20">
-                                <label class="control-label col-md-3">Descripción
-                                    <span class="required"> * </span>
-                                </label>
-                                <div class="col-md-4">
-                                    @if($errors->has('descripcion'))
-                                            <div class="form-group has-error">
-                                                <div class="col-md-12">
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-warning tooltips" data-original-title="Esta campo es requerido."></i>
-                                                        {{-- <input type="text" class="form-control" name="descripcion" value="{{ old('descripcion')}}"/> </div> --}}
-                                                        <textarea class="form-control" rows="3" name="descripcion" value="{{ old('descripcion')}}" ></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                    @else
-                                    {{-- <input type="text" name="paginas" class="form-control" value="{{ old('paginas')}}"/> --}}
-                                    <textarea class="form-control" rows="3" name="descripcion" value="{{ old('descripcion')}}" ></textarea>
+                                        <input type="text" name="name_autor" class="form-control" value="{{ old('name_autor')}}"/>
                                     @endif 
                                 </div>
                             </div>
                             
                             <div class="form-group  margin-top-20">
-                                <label class="control-label col-md-3">Fecha de Publicación
+                                <label class="control-label col-md-3">Biografia
                                     <span class="required"> * </span>
                                 </label>
                                 <div class="col-md-4">
-                                        @if($errors->has('fecha_publicacion'))
+                                    @if($errors->has('biografia'))
                                             <div class="form-group has-error">
                                                 <div class="col-md-12">
                                                     <div class="input-icon right">
                                                         <i class="fa fa-warning tooltips" data-original-title="Esta campo es requerido."></i>
-                                                        <input type="text" name="fecha_publicacion" class="form-control" value="{{ old('fecha_publicacion')}}"/>
-                                                     </div>
+                                                        {{-- <input type="text" class="form-control" name="biografia" value="{{ old('biografia')}}"/> </div> --}}
+                                                        <textarea class="form-control" rows="3" name="biografia" value="{{ old('biografia')}}" ></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        @else
-                                            <input type="text" name="fecha_publicacion" class="form-control" value="{{ old('fecha_publicacion')}}"/>
-                                        @endif 
+                                    @else
+                                    {{-- <input type="text" name="paginas" class="form-control" value="{{ old('paginas')}}"/> --}}
+                                    <textarea class="form-control" rows="3" name="biografia" value="{{ old('biografia')}}" ></textarea>
+                                    @endif 
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-3">Autor</label>
-                                <div class="col-md-4">                                   
-                                    {{-- <select class="bs-select form-control input-small" data-style="btn-primary"> --}}
-                                        <select class="bs-select form-control" data-width="75%" name="autor_id">
-                                            @foreach($autors as $autor)
-                                                {{-- <option>{{ $rols->nombre_rol }}</option> --}}
-                                                <option value="{{$autor->id}}">{{$autor->name_autor}}</option>
-                                            @endforeach
-                                        </select>
-                                </div>
-                            </div>
-
+                            </div>                            
+                           
                             <div class="form-group  margin-top-20">
                                 <label class="control-label col-md-3">Foto
                                     <span class="required"> * </span>
@@ -157,5 +105,6 @@
             <!-- END VALIDATION STATES-->
         </div>
     </div>
+
 
 @endsection

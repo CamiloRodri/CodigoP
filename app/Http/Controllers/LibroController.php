@@ -44,11 +44,13 @@ class LibroController extends Controller
                 'descripcion' => 'required',
                 'autor_id' => '',
                 'foto' => 'required',
+                'fecha_publicacion' => 'required'
         ], [
             'titulo.required' => 'El campo es requerido',
             'paginas.required' => 'El campo es requerido',
             'descripcion.required' => 'El campo es requerido',        
-            'foto.required' => 'El campo es requerido'
+            'foto.required' => 'El campo es requerido',
+            'fecha_publicacion.required' => 'El campo es requerido'
         ]);
         $ruta = public_path().'/images/Libros/';
         // recogida del form
@@ -72,9 +74,12 @@ class LibroController extends Controller
             'calificacion' => '5',
             'autor_id' => $data['autor_id'],
             'foto' => $temp_name,
+            'fecha_publicacion' => $data['fecha_publicacion'],
         ]);
         return redirect()->route('libro.list');
     }
+
+    
 
     public function update()
     {
