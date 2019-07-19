@@ -13,6 +13,9 @@ class AutorSeeder extends Seeder
      */
     public function run()
     {
-        Autor::create(['name_autor'=>'Mario Mendoza']);
+        Autor::create([
+        	'name_autor'=>'Mario Mendoza',
+        	'foto' => 'mario.jpg'
+        ]);
     }
 }

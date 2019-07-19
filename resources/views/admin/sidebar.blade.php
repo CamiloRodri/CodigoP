@@ -69,7 +69,7 @@
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="{{ asset('libros') }}" class="nav-link ">
+                        <a href="{{ asset('autor') }}" class="nav-link ">
                             <span class="title">Autores</span>
                         </a>
                     </li>
