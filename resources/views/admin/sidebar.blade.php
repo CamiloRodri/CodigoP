@@ -74,12 +74,12 @@
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="{{ asset('nuevolibro') }}" class="nav-link ">
+                        <a href="{{ asset('libro/nuevo') }}" class="nav-link ">
                             <span class="title">Agregar Libros</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="{{ asset('libros') }}" class="nav-link ">
+                        <a href="{{ asset('libro') }}" class="nav-link ">
                             <span class="title">Agregar Autores</span>
                         </a>
                     </li>

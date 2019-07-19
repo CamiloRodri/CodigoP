@@ -73,7 +73,7 @@
                                                     <div class="mt-overlay">
                                                         <h2>{{ $autor->name_autor }}</h2>
                                                         <p>
-                                                            <a class="mt-info uppercase btn default btn-outline" href="javascript;">Leer Mas</a>
+                                                            <a class="mt-info uppercase btn default btn-outline" href="{{ route('autor.show', ['id' => $autor->id]) }}">Leer Mas</a>
                                                         </p>
                                                     </div>
                                                 </div>

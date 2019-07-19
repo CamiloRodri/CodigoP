@@ -76,8 +76,10 @@ Route::get('/libros', 'LibroController@index')->name('libro.list');
 
 Route::get('/libros/{libro}', 'LibroController@show')->name('libro.show');
 
-Route::get('/nuevolibro', 'LibroController@create')->name('libro.create');
+Route::get('/libro/nuevo/', 'LibroController@create')->name('libro.create');
 
 Route::post('/crearlibro', 'LibroController@store');
 
-Route::get('/autor', 'AutorController@index')->name('libro.list');
+Route::get('/autor', 'AutorController@index')->name('autor.list');
+
+Route::get('/autor/{autor}', 'AutorController@show')->name('autor.show');
