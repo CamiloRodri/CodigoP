@@ -39,13 +39,16 @@ class LibroController extends Controller
     {
         // $data = request()->all();
         $data = request()->validate([
-                'titulo' => '',
+                'titulo' => 'required',
                 'paginas' => 'required',
-                'descripcion' => '',
+                'descripcion' => 'required',
                 'autor_id' => '',
-                'foto' => '',
+                'foto' => 'required',
         ], [
-            'paginas.required' => 'El campo es requerido'
+            'titulo.required' => 'El campo es requerido',
+            'paginas.required' => 'El campo es requerido',
+            'descripcion.required' => 'El campo es requerido',        
+            'foto.required' => 'El campo es requerido'
         ]);
         $ruta = public_path().'/images/Libros/';
         // recogida del form
