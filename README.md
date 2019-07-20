@@ -39,7 +39,7 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
    (Seleccionar Opción de Zizaco/Entrust, y Enter)
    -(Punto [7] , instalacion Debugbar en Composer)
 7- $ composer require barryvdh/laravel-debugbar --dev
-   -(Punto [8] , instalacion ImageFile en Composer)
+   -(Punto [8] , instalacion Intervention Imagge en Composer para subir Foto a prpyecto)
 8- $ composer require intervention/image
 
 9- Copiar el archivo .env.example 
@@ -77,6 +77,7 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
 * <a href="http://codeship.com/">Codeship, pruebas de integración contínua</a>
 
 
+
 ### Material de Apoyo
 
 * <a href="https://styde.net/">Styde</a>
@@ -86,3 +87,4 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
 * <a href="https://wkhtmltopdf.org/downloads.html">Binarios Snappy</a>
 * <a href="https://github.com/MicrosoftArchive/redis/releases">Redis Windows</a>
 * <a href="https://nodejs.org/en/">Node.js</a>
+* <a href="https://jesuschicano.es/como-subir-imagenes-en-laravel/">Intervention Image</a>
