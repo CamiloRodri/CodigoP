@@ -14,7 +14,7 @@
                 <div class="portlet-body">
                     <!-- BEGIN FORM-->
 
-                    <form method="POST" action="{{ url('crear') }}" id="form_sample_2" class="form-horizontal">
+                    <form method="POST" action="{{ url('crear') }}" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-body">
                             <div class="alert alert-danger display-hide">
@@ -98,10 +98,10 @@
                                 <label class="control-label col-md-3">Rol</label>
                                 <div class="col-md-4">
                                     {{-- <select class="bs-select form-control input-small" data-style="btn-primary"> --}}
-                                    <select class="bs-select form-control" data-width="75%" name="rol_id">
+                                    <select class="bs-select form-control" data-width="75%" name="role_id">
                                         @foreach($rol as $rols)
                                             {{-- <option>{{ $rols->nombre_rol }}</option> --}}
-                                            <option value="{{$rols->id}}">{{$rols->nombre_rol}}</option>
+                                            <option value="{{$rols->id}}">{{$rols->name}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -126,9 +126,20 @@
                                     <span class="required"> * </span>
                                 </label>
                                 <div class="col-md-4">
-                                    <div class="input-icon right">
-                                        <i class="fa"></i>
-                                        <input type="file" class="form-control" name="foto" /> </div>
+                                    @if($errors->has('foto'))
+                                            <div class="form-group has-error">
+                                                <div class="col-md-12">
+                                                    <div class="input-icon right">
+                                                        <i class="fa fa-warning tooltips" data-original-title="Esta campo es requerido."></i>
+                                                        {{-- <input type="text" class="form-control" name="descripcion" value="{{ old('descripcion')}}"/> </div> --}}
+                                                        <input type="file" class="form-control" name="foto" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    @else
+                                    {{-- <input type="text" name="paginas" class="form-control" value="{{ old('paginas')}}"/> --}}
+                                    <input type="file" class="form-control" name="foto" />
+                                    @endif 
                                 </div>
                             </div>
 

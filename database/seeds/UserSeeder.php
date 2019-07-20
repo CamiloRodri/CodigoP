@@ -1,6 +1,5 @@
 <?php
 use App\User;
-use App\Rol;
 use App\Role;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -18,8 +17,6 @@ class UserSeeder extends Seeder
     	// ->where('nombre_rol' , 'Administrador')
     	// ->value('id');
 
-    	$rol = Rol::where('nombre_rol' , 'Administrador')
-    	->value('id');
 
     	//dd($rol);
 
@@ -29,21 +26,19 @@ class UserSeeder extends Seeder
             		'password' => bcrypt('123'),
             		'telefono' => '123',
             		'direccion' => 'Transversal 11',
-                    'foto' => 'images/Usuarios/team1.jpg',
-            		'rol_id' => $rol,
+                    'foto' => 'team1.jpg',
             		'email' => 'camilorodri28@outlook.com'
             	]);
         $role = Role::where('name', '=', 'Administrador')->first();
         $user->attachRole($role);
 
-        User::create([
+        $user = User::create([
             'name' => 'Camilo',
             'lastname' => 'Rodriguez',
             'password' => bcrypt('123'),
             'telefono' => '123',
             'direccion' => 'Transversal 11',
-            'foto' => 'images/Usuarios/team10.jpg',
-            'rol_id' => Rol::where('nombre_rol' , 'Administrador')->value('id'),
+            'foto' => 'team10.jpg',
             'email' => 'criscamiro2@outlook.com'
         ]);
         $role = Role::where('name', '=', 'Usuario')->first();
