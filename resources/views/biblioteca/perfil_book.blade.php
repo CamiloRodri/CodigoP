@@ -44,6 +44,9 @@
                     <li>
                         <a href="javascript:;"> Prestamo </a>
                     </li>
+                    <li>
+                        <a href="{{ route('libro.edit', ['id' => $libro->id]) }}"> Editar </a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-9">
@@ -56,6 +59,10 @@
 	                        	echo $var 
 	                        ?>
                         </p>
+
+                        <font size=3><b>Numero de Paginas:</b>  {{ $libro->paginas }}</font>
+						<p></p>
+                        <font size=3><b>Año de Publicación:</b>  {{ $libro->fecha_publicacion }}</font>
                         {{-- <ul class="list-inline">
                             <li>
                                 <i class="fa fa-map-marker"></i> Spain </li>
@@ -76,6 +83,8 @@
                 <!--end row-->
                 
             </div>
+             
+			
         </div>
 	</div>
 

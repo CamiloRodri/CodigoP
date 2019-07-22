@@ -80,6 +80,10 @@ Route::get('/libro/nuevo/', 'LibroController@create')->name('libro.create');
 
 Route::post('/crearlibro', 'LibroController@store');
 
+Route::get('/editar/{libro}', 'LibroController@showupdate')->name('libro.edit');
+
+Route::put('/libros/{libro}', 'LibroController@update')->name('libro.update');
+
 //Autor
 Route::get('/autor', 'AutorController@index')->name('autor.list');
 
@@ -88,3 +92,4 @@ Route::get('/autor/{autor}', 'AutorController@show')->name('autor.show');
 Route::get('/auto/nuevo/', 'AutorController@create')->name('autor.create');
 
 Route::post('/crearautor', 'AutorController@store');
+

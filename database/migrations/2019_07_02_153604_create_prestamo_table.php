@@ -21,7 +21,6 @@ class CreatePrestamoTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');  
             $table->string('fecha_inicio');
             $table->string('fecha_fin');
-            $table->string('titulo');
 
             $table->timestamps();
         });

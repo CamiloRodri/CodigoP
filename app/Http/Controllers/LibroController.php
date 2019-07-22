@@ -79,11 +79,18 @@ class LibroController extends Controller
         return redirect()->route('libro.list');
     }
 
-    
-
-    public function update()
+    public function showupdate(Libro $libro)
     {
-    	//
+        //
+        $autors = Autor::all();
+        return view('biblioteca.editar_book', compact('libro', 'autors'));
+    }
+
+    public function update(Libro $libro)
+    {
+        $libro->update(request()->all());
+
+        return view('biblioteca.perfil_book', compact('libro'));
     }
 
     public function delete()

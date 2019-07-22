@@ -61,7 +61,7 @@ El proyecto esta desarrollado en [Laravel 5.5](https://laravel.com/docs/5.5/)
    
 12- $ php artisan key:generate
 13- $ php artisan storage:link
-14- Migrar las bases de datos de developer y el modulo asignado ejemplo
+14- Migrar las bases de datos de biblioteca, y seeders.
    
     $ php artisan migrate:fresh --seed
     
