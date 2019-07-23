@@ -41,9 +41,25 @@
                         <img src="../images/Autores/{{ $autor->foto }}" width="500" height="230" class="img-responsive pic-bordered" alt="" />
                        {{--  <a href="javascript:;" class="profile-edit"> </a> --}}
                     </li>
-                    <li>
-                        <a href="javascript:;"> Prestamo </a>
                     </li>
+                    @if(Entrust::can('editar-autores'))
+                    <li>
+                        <a href="{{ route('autor.edit', ['id' => $autor->id]) }}"> Editar </a>
+                    </li>
+                    @endif
+                    @if(Entrust::can('eliminar_autores'))
+                    <form action="{{ route('autor.destroy', ['id' => $autor->id]) }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    @endif
                 </ul>
             </div>
             <div class="col-md-9">

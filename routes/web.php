@@ -95,3 +95,9 @@ Route::get('/auto/nuevo/', 'AutorController@create')->name('autor.create');
 
 Route::post('/crearautor', 'AutorController@store');
 
+Route::get('/editar/{autor}', 'LibroController@showupdate')->name('autor.edit');
+
+Route::put('/autor/{autor}', 'AutorController@update')->name('autor.update');
+
+Route::delete('/autor/{autor}', 'AutorController@destroy')->name('autor.destroy');
+
