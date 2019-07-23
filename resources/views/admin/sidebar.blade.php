@@ -73,16 +73,20 @@
                             <span class="title">Autores</span>
                         </a>
                     </li>
+                    @if(Entrust::can('agregar_libros'))
                     <li class="nav-item  ">
                         <a href="{{ route('libro.create') }}" class="nav-link ">
                             <span class="title">Agregar Libros</span>
                         </a>
                     </li>
+                    @endif
+                    @if(Entrust::can('agregar_autores'))
                     <li class="nav-item  ">
                         <a href="{{ route('autor.create') }}" class="nav-link ">
                             <span class="title">Agregar Autores</span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </li>
             
@@ -120,7 +124,7 @@
                 </ul>
             </li>
             
-            
+            @if(Entrust::hasRole('Administrador'))
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-user"></i>
@@ -136,7 +140,7 @@
                     </li>
                 </ul>
             </li>
-            
+            @endif
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>

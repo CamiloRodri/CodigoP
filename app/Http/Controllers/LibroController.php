@@ -93,9 +93,10 @@ class LibroController extends Controller
         return view('biblioteca.perfil_book', compact('libro'));
     }
 
-    public function delete()
+    public function destroy(Libro $libro)
     {
-    	//
+        $libro->delete();
+        return redirect()->route('libro.list');
     }
 
     protected function random_string()

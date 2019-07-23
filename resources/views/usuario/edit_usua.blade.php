@@ -1,7 +1,7 @@
 @extends('admin.header')
 
 @section('content')
-
+    @if(Entrust::can('editar_usuarios'))    
 					<h1 class="page-title"> Editar Perfil
                     </h1>
                     <!-- END PAGE HEADER-->
@@ -162,7 +162,7 @@
                             <!-- END PROFILE CONTENT -->
                         </div>
                     </div>
-
+    @endif
 
 {{-- 	{{ $user->id }} --}}
 

@@ -1,6 +1,7 @@
 @extends('admin.header')
 
 @section('content')
+    @if(Entrust::can('agregar_autores'))
 	<div class="row">
         <div class="col-md-12">
             <!-- BEGIN VALIDATION STATES-->
@@ -105,6 +106,6 @@
             <!-- END VALIDATION STATES-->
         </div>
     </div>
-
+    @endif
 
 @endsection

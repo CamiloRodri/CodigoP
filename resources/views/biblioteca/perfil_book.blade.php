@@ -44,9 +44,24 @@
                     <li>
                         <a href="javascript:;"> Prestamo </a>
                     </li>
+                    @if(Entrust::hasRole('Administrador'))
                     <li>
                         <a href="{{ route('libro.edit', ['id' => $libro->id]) }}"> Editar </a>
                     </li>
+                    @endif
+                    @if(Entrust::hasRole('Administrador'))
+                    <form action="{{ route('libro.destroy', ['id' => $libro->id]) }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    @endif
                 </ul>
             </div>
             <div class="col-md-9">

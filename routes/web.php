@@ -84,6 +84,8 @@ Route::get('/editar/{libro}', 'LibroController@showupdate')->name('libro.edit');
 
 Route::put('/libros/{libro}', 'LibroController@update')->name('libro.update');
 
+Route::delete('/libros/{libro}', 'LibroController@destroy')->name('libro.destroy');
+
 //Autor
 Route::get('/autor', 'AutorController@index')->name('autor.list');
 

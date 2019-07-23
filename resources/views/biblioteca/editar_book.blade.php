@@ -1,8 +1,8 @@
 @extends('admin.header')
 
 @section('content')
-
-<div class="row">
+    @if(Entrust::can('editar_libros'))   
+    <div class="row">
         <div class="col-md-12">
             <!-- BEGIN VALIDATION STATES-->
             <div class="portlet light portlet-fit portlet-form ">
@@ -158,5 +158,5 @@
             <!-- END VALIDATION STATES-->
         </div>
     </div>
-
+    @endif
 @endsection
