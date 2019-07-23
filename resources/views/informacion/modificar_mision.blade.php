@@ -2,6 +2,6 @@
 
 @section('content')
 
-	@if(Entrust::can('modificar_mision'))   
+	@if(Entrust::can('modificar-mision'))   
 	@endif
 @endsection

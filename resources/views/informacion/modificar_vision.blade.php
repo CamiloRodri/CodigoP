@@ -2,6 +2,6 @@
 
 @section('content')
 
-	@if(Entrust::can('modificar_vision'))   
+	@if(Entrust::can('modificar-vision'))   
 	@endif
 @endsection

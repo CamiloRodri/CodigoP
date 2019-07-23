@@ -1,7 +1,7 @@
 @extends ('admin.header')
 
 @section('content')  
-@if(Entrust::can('ver_usuarios'))     
+@if(Entrust::can('ver-usuarios'))     
 {{-- {{ toastr.info("{{ Session::get('message') }}") }} --}}
 <!-- END THEME PANEL -->
     <h1 class="page-title"> Lista de Usuarios

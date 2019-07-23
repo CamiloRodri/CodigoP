@@ -1,7 +1,7 @@
 @extends ('admin.header')
 
 @section('content')    
-    @if(Entrust::can('agregar_libros'))           
+    @if(Entrust::can('agregar-libros'))           
     <div class="row">
         <div class="col-md-12">
             <!-- BEGIN VALIDATION STATES-->

@@ -73,14 +73,14 @@
                             <span class="title">Autores</span>
                         </a>
                     </li>
-                    @if(Entrust::can('agregar_libros'))
+                    @if(Entrust::can('agregar-libros'))
                     <li class="nav-item  ">
                         <a href="{{ route('libro.create') }}" class="nav-link ">
                             <span class="title">Agregar Libros</span>
                         </a>
                     </li>
                     @endif
-                    @if(Entrust::can('agregar_autores'))
+                    @if(Entrust::can('agregar-autores'))
                     <li class="nav-item  ">
                         <a href="{{ route('autor.create') }}" class="nav-link ">
                             <span class="title">Agregar Autores</span>

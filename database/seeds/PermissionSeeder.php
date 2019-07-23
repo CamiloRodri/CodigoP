@@ -79,7 +79,7 @@ class PermissionSeeder extends Seeder
         $permission  =  Permission::create([
                         'name' => 'ver-autores',
                         'display_name' => 'ver-autores',
-                        'description' => 'Ver Libros'
+                        'description' => 'Ver Autores'
                     ]);
         $admin->attachPermission($permission);
         $user->attachPermission($permission);
@@ -87,21 +87,21 @@ class PermissionSeeder extends Seeder
         $permission  =  Permission::create([
                         'name' => 'agregar-autores',
                         'display_name' => 'agregar-autores',
-                        'description' => 'Agregar Libros'
+                        'description' => 'Agregar Autores'
                     ]);
         $admin->attachPermission($permission);
 
         $permission  =  Permission::create([
                         'name' => 'editar-autores',
                         'display_name' => 'editar-autores',
-                        'description' => 'Editar Libros'
+                        'description' => 'Editar Autores'
                     ]);
         $admin->attachPermission($permission);
 
         $permission  =  Permission::create([
                         'name' => 'eliminar-autores',
                         'display_name' => 'eliminar-autores',
-                        'description' => 'Eliminar Libros'
+                        'description' => 'Eliminar Autores'
                     ]);
         $admin->attachPermission($permission);
 
@@ -121,28 +121,28 @@ class PermissionSeeder extends Seeder
         $user->attachPermission($permission);
 
         $permission  =  Permission::create([
-                        'name' => 'ver_usuarios',
+                        'name' => 'ver-usuarios',
                         'display_name' => 'ver_usuarios',
                         'description' => 'Ver Usuarios'
                     ]);
         $admin->attachPermission($permission);
 
         $permission  =  Permission::create([
-                        'name' => 'agregar_usuarios',
+                        'name' => 'agregar-usuarios',
                         'display_name' => 'agregar_usuarios',
                         'description' => 'Agregar Usuarios'
                     ]);
         $admin->attachPermission($permission);
 
         $permission  =  Permission::create([
-                        'name' => 'editar_usuarios',
+                        'name' => 'editar-usuarios',
                         'display_name' => 'editar_usuarios',
                         'description' => 'Editar Usuarios'
                     ]);
         $admin->attachPermission($permission);
 
         $permission  =  Permission::create([
-                        'name' => 'eliminar_usuarios',
+                        'name' => 'eliminar-usuarios',
                         'display_name' => 'eliminar_usuarios',
                         'description' => 'Eliminar Usuarios'
                     ]);
