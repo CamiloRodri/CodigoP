@@ -83,6 +83,11 @@ class AutorController extends Controller
 
     public function destroy(Autor $autor)
     {
+        $libros = Libro::all()->where('autor_id', $autor->id);
+        foreach ($libros as $libro) {
+            $lib = Libro::where('id', '=', $libro->id)->first();
+            $lib->delete();
+        }
         $autor->delete();
 
         return redirect()->route('autor.list');
