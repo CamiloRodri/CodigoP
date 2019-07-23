@@ -80,7 +80,7 @@ Route::get('/libro/nuevo/', 'LibroController@create')->name('libro.create');
 
 Route::post('/crearlibro', 'LibroController@store');
 
-Route::get('/editar/{libro}', 'LibroController@showupdate')->name('libro.edit');
+Route::get('/leditar/{libro}', 'LibroController@showupdate')->name('libro.edit');
 
 Route::put('/libros/{libro}', 'LibroController@update')->name('libro.update');
 
@@ -95,7 +95,7 @@ Route::get('/auto/nuevo/', 'AutorController@create')->name('autor.create');
 
 Route::post('/crearautor', 'AutorController@store');
 
-Route::get('/editar/{autor}', 'LibroController@showupdate')->name('autor.edit');
+Route::get('/aeditar/{autor}', 'AutorController@showupdate')->name('autor.edit');
 
 Route::put('/autor/{autor}', 'AutorController@update')->name('autor.update');
 

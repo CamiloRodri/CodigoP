@@ -47,7 +47,7 @@
                         <a href="{{ route('autor.edit', ['id' => $autor->id]) }}"> Editar </a>
                     </li>
                     @endif
-                    @if(Entrust::can('eliminar_autores'))
+                    @if(Entrust::can('eliminar-autores'))
                     <form action="{{ route('autor.destroy', ['id' => $autor->id]) }}" method="POST">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}

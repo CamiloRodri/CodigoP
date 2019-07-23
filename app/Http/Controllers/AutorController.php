@@ -67,16 +67,24 @@ class AutorController extends Controller
         return redirect()->route('autor.list');
     }
 
+    public function showupdate(Autor $autor)
+    {
+        //
+        return view('autor.editar_autor', compact('autor'));
+    }
+
     public function update(Autor $autor)
     {
         $autor->update(request()->all());
-
-        return view('autor.perfil_autor', compact('autor'));
+        //return redirect()->route('autor.edit')->with($autor);
+        //return view('autor.perfil_autor', compact('autor'));
+        return redirect()->route('autor.list');
     }
 
     public function destroy(Autor $autor)
     {
         $autor->delete();
+
         return redirect()->route('autor.list');
     }
 

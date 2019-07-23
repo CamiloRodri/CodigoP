@@ -89,7 +89,6 @@ class LibroController extends Controller
     public function update(Libro $libro)
     {
         $libro->update(request()->all());
-
         return view('biblioteca.perfil_book', compact('libro'));
     }
 
