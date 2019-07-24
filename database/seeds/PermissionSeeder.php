@@ -148,6 +148,33 @@ class PermissionSeeder extends Seeder
                     ]);
         $admin->attachPermission($permission);
 
+        $permission  =  Permission::create([
+                        'name' => 'ver-ejemplar',
+                        'display_name' => 'ver-ejemplar',
+                        'description' => 'Ver Ejemplar'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'agregar-ejemplar',
+                        'display_name' => 'agregar-ejemplar',
+                        'description' => 'Agregar Ejemplar'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'editar-ejemplar',
+                        'display_name' => 'editar-ejemplar',
+                        'description' => 'Editar Ejemplar'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'eliminar-ejemplar',
+                        'display_name' => 'eliminar-ejemplar',
+                        'description' => 'Eliminar Ejemplar'
+                    ]);
+        $admin->attachPermission($permission);
 
 
 

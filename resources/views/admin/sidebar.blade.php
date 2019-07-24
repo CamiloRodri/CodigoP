@@ -40,7 +40,7 @@
                     @if(Entrust::can('modificar-mision'))
                     <li class="nav-item start ">
                         <a href="{{ asset('vision') }}" class="nav-link ">
-                            <i class="icon-bulb"></i>
+                            <i class="fa fa-hand-o-right"></i>
                             <span class="title">Modificar Misión</span>
                         </a>
                     </li>
@@ -63,19 +63,22 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
+                    <li class="nav-item ">
                         <a href="{{ route('libro.list') }}" class="nav-link ">
+                            <i class="fa fa-book"></i>
                             <span class="title">Libros</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
                         <a href="{{ asset('autor') }}" class="nav-link ">
+                            <i class="fa fa-male"></i>
                             <span class="title">Autores</span>
                         </a>
                     </li>
                     @if(Entrust::can('agregar-libros'))
                     <li class="nav-item  ">
                         <a href="{{ route('libro.create') }}" class="nav-link ">
+                            <i class="fa fa-book"></i>
                             <span class="title">Agregar Libros</span>
                         </a>
                     </li>
@@ -83,7 +86,15 @@
                     @if(Entrust::can('agregar-autores'))
                     <li class="nav-item  ">
                         <a href="{{ route('autor.create') }}" class="nav-link ">
+                            <i class="fa fa-male"></i>
                             <span class="title">Agregar Autores</span>
+                        </a>
+                    </li>
+                    @endif
+                    @if(Entrust::can('agregar-ejemplar'))
+                    <li class="nav-item  ">
+                        <a href="{{ route('libro.create') }}" class="nav-link ">
+                            <span class="title">Agregar Ejemplar</span>
                         </a>
                     </li>
                     @endif
@@ -99,11 +110,13 @@
                 <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="charts_amcharts.html" class="nav-link ">
+                            <i class="fa fa-money"></i>
                             <span class="title">Ventas</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
                         <a href="charts_amcharts.html" class="nav-link ">
+                            <i class="fa fa-upload"></i>
                             <span class="title">Pedido</span>
                         </a>
                     </li>
@@ -118,6 +131,7 @@
                 <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="maps_google.html" class="nav-link ">
+                            <i class="fa fa-map"></i>
                             <span class="title">Google Maps</span>
                         </a>
                     </li>
