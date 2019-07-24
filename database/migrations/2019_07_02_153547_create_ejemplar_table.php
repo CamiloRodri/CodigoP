@@ -17,6 +17,9 @@ class CreateEjemplarTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('libro_id');
             $table->foreign('libro_id')->references('id')->on('libro');
+            $table->string('ISBN')->nullable();
+            $table->string('codigo');
+            $table->string('ubicacion')->nullable();
             $table->timestamps();
         });
     }

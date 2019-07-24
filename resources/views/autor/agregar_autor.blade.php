@@ -64,7 +64,7 @@
                                 </div>
                             </div>                            
                            
-                            <div class="form-group  margin-top-20">
+                            {{-- <div class="form-group  margin-top-20">
                                 <label class="control-label col-md-3">Foto
                                     <span class="required"> * </span>
                                 </label>
@@ -74,21 +74,78 @@
                                                 <div class="col-md-12">
                                                     <div class="input-icon right">
                                                         <i class="fa fa-warning tooltips" data-original-title="Esta campo es requerido."></i>
-                                                        {{-- <input type="text" class="form-control" name="descripcion" value="{{ old('descripcion')}}"/> </div> --}}
+                                                        
                                                         <input type="file" class="form-control" name="foto" />
                                                     </div>
                                                 </div>
                                             </div>
                                     @else
-                                    {{-- <input type="text" name="paginas" class="form-control" value="{{ old('paginas')}}"/> --}}
                                     <input type="file" class="form-control" name="foto" />
                                     @endif 
                                 </div>
-                            </div>
+                            </div> --}}
 
+                            
+                            <div class="form-group last">
+                                <label class="control-label col-md-3">Foto
+                                        <span class="required"> * </span>
+                                </label>
+                                @if($errors->has('foto'))
+                                    <div class="form-group has-error">
+                                        <div class="col-md-4">
+                                            <div class="input-icon right">
+                                                <i class="fa fa-warning tooltips" data-original-title="Esta campo es requerido."></i>
+                                                <div class="col-md-4">
+                                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
+                                                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                                                        <div>
+                                                            <span class="btn default btn-file">
+                                                                <span class="fileinput-new"> Seleccionar Imagen </span>
+                                                                <span class="fileinput-exists"> Cambiar </span>
+                                                                <input type="file" name="foto"> </span>
+                                                            <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Quitar </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label class="control-label col-md-3">  
+                                    </label>
+                                    <div class="col-md-8">
+                                        <span class="label label-danger">NOTA!</span>La vista previa de la imagen solo funciona en IE10 +, FF3.6 +, Safari6.0 +, Chrome6.0 + y Opera11.1 +. En navegadores más antiguos se muestra el nombre del archivo en su lugar.
+                                    </div>
+                                @else
+                                    <div class="col-md-4">
+                                        <div class="col-md-4">
+                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
+                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                                            <div>
+                                                <span class="btn default btn-file">
+                                                    <span class="fileinput-new"> Seleccionar Imagen </span>
+                                                    <span class="fileinput-exists"> Cambiar </span>
+                                                    <input type="file" name="foto"> </span>
+                                                <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Quitar </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <label class="control-label col-md-3">  
+                                    </label>
+                                    <div class="col-md-8">
+                                        <span class="label label-danger">NOTA!</span>La vista previa de la imagen solo funciona en IE10 +, FF3.6 +, Safari6.0 +, Chrome6.0 + y Opera11.1 +. En navegadores más antiguos se muestra el nombre del archivo en su lugar.
+                                    </div>
+                                @endif
+                                
+                            </div>
+                            
                         </div>
 
-                        
                         <div class="form-actions">
                             <div class="row">
                                 <div class="col-md-offset-3 col-md-9">
