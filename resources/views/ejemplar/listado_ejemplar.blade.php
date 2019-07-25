@@ -108,7 +108,7 @@
                                             </button>
                                             <ul class="dropdown-menu pull-left" role="menu">
                                                 <li>
-                                                    <a href="{{ route('usuario.show', ['id' => $ejemplar->id]) }}">
+                                                    <a href="{{ route('ejemplar.show', ['id' => $ejemplar->id]) }}">
                                                         <i class="icon-docs"></i> Editar </a>
                                                 </li>
                                                 {{-- <li>
@@ -121,7 +121,7 @@
                                                     
                                                 </li> --}}
                                                 <li>
-                                                    <form action="{{ route('usuario.destroy', ['id' => $ejemplar->id]) }}" method="POST">
+                                                    <form action="{{ route('ejemplar.destroy', ['id' => $ejemplar->id]) }}" method="POST">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
                                                         &nbsp&nbsp

@@ -101,7 +101,7 @@
                     @endif
                     @if(Entrust::can('agregar-ejemplar'))
                     <li class="nav-item  ">
-                        <a href="{{ route('libro.create') }}" class="nav-link ">
+                        <a href="{{ route('ejemplar.create') }}" class="nav-link ">
                             <i class="fa fa-bookmark"></i>
                             <span class="title">Agregar Ejemplar</span>
                         </a>
