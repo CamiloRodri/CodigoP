@@ -39,7 +39,7 @@
                     </li>
                     @if(Entrust::can('modificar-mision'))
                     <li class="nav-item start ">
-                        <a href="{{ asset('vision') }}" class="nav-link ">
+                        <a href="{{ route('mision.edit') }}" class="nav-link ">
                             <i class="fa fa-hand-o-right"></i>
                             <span class="title">Modificar Misión</span>
                         </a>
@@ -47,7 +47,7 @@
                     @endif
                     @if(Entrust::can('modificar-vision'))
                     <li class="nav-item start ">
-                        <a href="{{ asset('vision') }}" class="nav-link ">
+                        <a href="{{ route('vision.edit') }}" class="nav-link ">
                             <i class="icon-bulb"></i>
                             <span class="title">Modificar Visión</span>
                         </a>

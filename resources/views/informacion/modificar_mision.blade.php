@@ -9,14 +9,14 @@
 		            <div class="portlet-title">
 		                <div class="caption">
 		                    <i class="icon-bubble font-green"></i>
-		                    <span class="caption-subject font-green bold uppercase">Editar Mision</span>
+		                    <span class="caption-subject font-green bold uppercase">Editar Misión</span>
 		                </div>
 		            </div>
 		            <div class="portlet-body">
 		                <!-- BEGIN FORM-->
 
 		                {{-- <form method="POST" action="{{ url("autor/{$autor->id}") }}" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data"> --}}
-		                <form method="POST" action="{{ url("autor/{$info->id}") }}" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+		                <form method="POST" action="{{ url("infomision/{$info->id}") }}" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
 		                    {{ method_field('PUT') }}
 		                    {{ csrf_field() }}
 		                    <div class="form-body">
@@ -25,7 +25,7 @@
 		                        <div class="alert alert-success display-hide">
 		                            <button class="close" data-close="alert"></button> La Informacion es Correcta! </div> --}}
 		                        <div class="form-group  margin-top-20">
-                                <label class="control-label col-md-3">Mision
+                                <label class="control-label col-md-3">Misión
                                     <span class="required"> * </span>
                                 </label>
                                 <div class="col-md-4">

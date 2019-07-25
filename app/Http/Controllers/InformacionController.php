@@ -32,4 +32,16 @@ class InformacionController extends Controller
     	return view('informacion.modificar_vision', compact('info'));
     }
 
+    public function update_mision(Informacion $info)
+    {
+        $info->update(request()->all());
+        return view('informacion.mision', compact('info'));
+    }
+
+    public function update_vision(Informacion $info)
+    {
+        $info->update(request()->all());
+        return view('informacion.vision', compact('info'));
+    }
+
 }

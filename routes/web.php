@@ -64,17 +64,19 @@ Route::post('/crear', 'UserController@store');
 // Route::get('lista', function () {
 //     return view('usuario.listado_usua');
 // });
-// Route::get('/mision', function () {
-//     return view('informacion.mision');
-// });
-Route::get('/editar/mision', 'InformacionController@showupdate_mision')->name('mision');
 
-// Route::get('/vision', function () {
-//     return view('informacion.vision');
-// });
+//Informacion
 Route::get('/mision', 'InformacionController@show_mision')->name('mision');
 
 Route::get('/vision', 'InformacionController@show_vision')->name('vision');
+
+Route::get('/editar/mision', 'InformacionController@showupdate_mision')->name('mision.edit');
+
+Route::put('/infomision/{info}', 'InformacionController@update_mision')->name('mision.update');
+
+Route::get('/editar/vision', 'InformacionController@showupdate_vision')->name('vision.edit');
+
+Route::put('/infovision/{info}', 'InformacionController@update_vision')->name('vision.update');
 
 //Libro
 Route::get('/libros', 'LibroController@index')->name('libro.list');
