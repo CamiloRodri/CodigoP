@@ -22,7 +22,8 @@
         </div>
         <!-- END PAGE HEADER-->
         <div class="note note-info">
-            <p> La Universidad de Cundinamarca será reconocida por la sociedad, en el ámbito local, regional, nacional e internacional, como generadora de conocimiento relevante y pertinente, centrada en el cuidado de la vida, la naturaleza, el ambiente, la humanidad y la convivencia.</p>
+            {{-- <p> La Universidad de Cundinamarca será reconocida por la sociedad, en el ámbito local, regional, nacional e internacional, como generadora de conocimiento relevante y pertinente, centrada en el cuidado de la vida, la naturaleza, el ambiente, la humanidad y la convivencia.</p> --}}
+            <p>{{ $info->vision }}</p>        
         </div>
 
 @endsection

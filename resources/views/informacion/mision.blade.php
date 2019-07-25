@@ -22,7 +22,8 @@
         </div>
         <!-- END PAGE HEADER-->
         <div class="note note-info">
-            <p> La Universidad de Cundinamarca es una institución pública local del Siglo XXI, caracterizada por ser una organización social de conocimiento, democrática, autónoma, formadora, agente de la transmodernidad que incorpora los consensos mundiales de la humanidad y las buenas prácticas de gobernanza universitaria, cuya calidad se genera desde los procesos de enseñanza - aprendizaje, investigación e innovación, e interacción universitaria.</p>
+            {{-- <p> La Universidad de Cundinamarca es una institución pública local del Siglo XXI, caracterizada por ser una organización social de conocimiento, democrática, autónoma, formadora, agente de la transmodernidad que incorpora los consensos mundiales de la humanidad y las buenas prácticas de gobernanza universitaria, cuya calidad se genera desde los procesos de enseñanza - aprendizaje, investigación e innovación, e interacción universitaria.</p> --}}
+            <p>{{ $info->mision }}</p>
         </div>
 
 @endsection

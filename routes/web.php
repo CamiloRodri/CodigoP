@@ -64,13 +64,18 @@ Route::post('/crear', 'UserController@store');
 // Route::get('lista', function () {
 //     return view('usuario.listado_usua');
 // });
-Route::get('/mision', function () {
-    return view('informacion.mision');
-});
+// Route::get('/mision', function () {
+//     return view('informacion.mision');
+// });
+Route::get('/editar/mision', 'InformacionController@showupdate_mision')->name('mision');
 
-Route::get('/vision', function () {
-    return view('informacion.vision');
-});
+// Route::get('/vision', function () {
+//     return view('informacion.vision');
+// });
+Route::get('/mision', 'InformacionController@show_mision')->name('mision');
+
+Route::get('/vision', 'InformacionController@show_vision')->name('vision');
+
 //Libro
 Route::get('/libros', 'LibroController@index')->name('libro.list');
 
@@ -109,8 +114,6 @@ Route::get('/ejemplar/{ejemplar}', 'EjemplarController@show')->name('ejemplar.sh
 Route::get('/ejempla/nuevo/', 'EjemplarController@create')->name('ejemplar.create');
 
 Route::post('/crearejemplar', 'EjemplarController@store');
-
-// Route::get('/aeditar/{ejemplar}', 'EjemplarController@showupdate')->name('ejemplar.edit');
 
 Route::put('/ejemplar/{ejemplar}', 'EjemplarController@update')->name('ejemplar.update');
 
