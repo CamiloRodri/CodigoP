@@ -81,7 +81,10 @@
                             
                             @foreach($ejemplares as $ejemplar)
                                 <tr class="odd gradeX"> 
-                                    <td style="visibility: hidden"> {{ $ejemplar->id }} </td>                                   
+
+                                    <td style="visibility: hidden" width="1" height="1"> 
+                                        {{ $ejemplar->id }} 
+                                    </td>                                   
                                     <td> 
                                     	{{-- {{ $ejemplar->libro_id }}  --}}
 										@foreach($libros as $libro)

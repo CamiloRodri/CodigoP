@@ -89,7 +89,9 @@
                             
                             @foreach($users as $user)
                                 <tr class="odd gradeX"> 
-                                    <td style="visibility: hidden"> {{ $user->id }} </td>                                   
+                                    <td style="visibility: hidden" width="1" height="1"> 
+                                        {{ $user->id }} 
+                                    </td>                                   
                                     <td> {{ $user->name }} </td>
                                     <td>
                                         <a href="mailto:{{ $user->email }}"> {{ $user->email }} </a>
