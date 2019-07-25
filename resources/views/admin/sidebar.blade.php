@@ -75,6 +75,14 @@
                             <span class="title">Autores</span>
                         </a>
                     </li>
+                    @if(Entrust::can('ver-ejemplar'))
+                    <li class="nav-item  ">
+                        <a href="{{ route('ejemplar.list') }}" class="nav-link ">
+                            <i class="fa fa-bookmark"></i>
+                            <span class="title">Ejemplar</span>
+                        </a>
+                    </li>
+                    @endif
                     @if(Entrust::can('agregar-libros'))
                     <li class="nav-item  ">
                         <a href="{{ route('libro.create') }}" class="nav-link ">
@@ -94,6 +102,7 @@
                     @if(Entrust::can('agregar-ejemplar'))
                     <li class="nav-item  ">
                         <a href="{{ route('libro.create') }}" class="nav-link ">
+                            <i class="fa fa-bookmark"></i>
                             <span class="title">Agregar Ejemplar</span>
                         </a>
                     </li>

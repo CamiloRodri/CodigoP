@@ -101,3 +101,18 @@ Route::put('/autor/{autor}', 'AutorController@update')->name('autor.update');
 
 Route::delete('/autor/{autor}', 'AutorController@destroy')->name('autor.destroy');
 
+//Ejempla
+Route::get('/ejemplar', 'EjemplarController@index')->name('ejemplar.list');
+
+// Route::get('/ejemplar/{ejemplar}', 'EjemplarController@show')->name('ejemplar.show');
+
+// Route::get('/auto/nuevo/', 'EjemplarController@create')->name('ejemplar.create');
+
+// Route::post('/crearejemplar', 'EjemplarController@store');
+
+// Route::get('/aeditar/{ejemplar}', 'EjemplarController@showupdate')->name('ejemplar.edit');
+
+// Route::put('/ejemplar/{ejemplar}', 'EjemplarController@update')->name('ejemplar.update');
+
+// Route::delete('/ejemplar/{ejemplar}', 'EjemplarController@destroy')->name('ejemplar.destroy');
+

@@ -56,9 +56,10 @@ class UserController extends Controller
         //     'message' => 'Lista de Usuarios!', 
         //     'alert-type' => 'success'
         // ];
-
+        $roles = Role::all();
+        $rolesuser = Role_User::all();
         $users = User::all();
-    	return view('usuario.listado_usua', compact('users', 'notification'));
+    	return view('usuario.listado_usua', compact('users', 'notification', 'roles', 'rolesuser'));
 
         //$rol = Role::where('id', '=', $role_id)->get();
         

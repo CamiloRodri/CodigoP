@@ -1,10 +1,10 @@
-@extends ('admin.header')
+@extends('admin.header')
 
-@section('content')  
+@section('content')
 @if(Entrust::can('ver-usuarios'))     
 {{-- {{ toastr.info("{{ Session::get('message') }}") }} --}}
 <!-- END THEME PANEL -->
-    <h1 class="page-title"> Lista de Usuarios
+    <h1 class="page-title"> Lista de Ejemplares
     </h1>
     <div class="page-bar">
         <ul class="page-breadcrumb">
@@ -14,7 +14,7 @@
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
-                <a href="#">Usuarios</a>
+                <a href="#">Ejemplar</a>
                 <i class="fa fa-angle-right"></i>
             </li>
             <li>
@@ -35,20 +35,14 @@
                 <div class="portlet-title">
                     <div class="caption font-dark">
                         <i class="icon-settings font-dark"></i>
-                        <span class="caption-subject bold uppercase"> Lista de Usuarios</span>
+                        <span class="caption-subject bold uppercase"> Lista de Ejemplares</span>
                     </div>
                 </div>
                 <div class="portlet-body">
                     <div class="table-toolbar">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="btn-group">
-                                    <a href="{{ route('usuario.create') }}">
-                                    <button id="sample_editable_1_new" class="btn sbold green"> Nuevo Usuario                                       
-                                        <i class="fa fa-plus"></i> 
-                                    </button>
-                                    </a>
-                                </div>
+                                
                             </div>
                             <div class="col-md-6">
                                 <div class="btn-group pull-right">
@@ -77,35 +71,23 @@
                         <thead>
                             <tr>
                                 <th style="visibility: hidden"> Numero </th>
-                                <th> Nombre </th>
-                                <th> Email </th>
-                                <th> Telefono </th>
-                                <th> Direccion </th>
-                                <th> Rol </th>
+                                <th> Libro </th>
+                                <th> Codigo </th>
+                                <th> Estado </th>
                                 <th> Editar/Eliminar </th>
                             </tr>
                         </thead>
                         <tbody>
                             
-                            @foreach($users as $user)
+                            @foreach($ejemplares as $ejemplar)
                                 <tr class="odd gradeX"> 
-                                    <td style="visibility: hidden"> {{ $user->id }} </td>                                   
-                                    <td> {{ $user->name }} </td>
+                                    <td style="visibility: hidden"> {{ $ejemplar->id }} </td>                                   
+                                    <td> {{ $ejemplar->libro_id }} </td>
                                     <td>
-                                        <a href="mailto:{{ $user->email }}"> {{ $user->email }} </a>
+                                        {{ $ejemplar->codigo }}
                                     </td>
-                                    <td class="center"> {{ $user->telefono }} </td>
-                                    <td class="center"> {{ $user->direccion }} </td>
-                                    {{-- <td class="center"> {{ $user->rol_id }} </td> --}}
-                                    @foreach($rolesuser as $roluser)
-                                        @if($roluser->user_id == $user->id)
-                                             @foreach($roles as $rol)
-                                                @if($rol->id == $roluser->role_id)
-                                                    <td class="center"> {{ $rol->name }} </td>
-                                                @endif
-                                            @endforeach
-                                        @endif
-                                    @endforeach
+                                    <td class="center"> {{ $ejemplar->estado }} </td>
+
                                     <td>
                                         <div class="btn-group">
                                             <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Acciones
@@ -113,11 +95,11 @@
                                             </button>
                                             <ul class="dropdown-menu pull-left" role="menu">
                                                 <li>
-                                                    <a href="{{ route('usuario.show', ['id' => $user->id]) }}">
+                                                    <a href="{{ route('usuario.show', ['id' => $ejemplar->id]) }}">
                                                         <i class="icon-docs"></i> Editar </a>
                                                 </li>
                                                 {{-- <li>
-                                                    <form action="{{ route('usuario.destroy', ['id' => $user->id]) }}" method="POST">
+                                                    <form action="{{ route('usuario.destroy', ['id' => $ejemplar->id]) }}" method="POST">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
                                                         <a>
@@ -126,7 +108,7 @@
                                                     
                                                 </li> --}}
                                                 <li>
-                                                    <form action="{{ route('usuario.destroy', ['id' => $user->id]) }}" method="POST">
+                                                    <form action="{{ route('usuario.destroy', ['id' => $ejemplar->id]) }}" method="POST">
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
                                                         &nbsp&nbsp
@@ -172,7 +154,7 @@
                                             </li>
                                             <li>
                                                 <a href="javascript:;">
-                                                    <i class="icon-user"></i> New User </a>
+                                                    <i class="icon-ejemplar"></i> New User </a>
                                             </li>
                                             <li class="divider"> </li>
                                             <li>
@@ -195,5 +177,4 @@
         </div>
     </div>
 @endif
-
 @endsection
