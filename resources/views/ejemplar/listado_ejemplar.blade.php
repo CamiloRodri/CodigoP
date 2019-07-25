@@ -82,12 +82,25 @@
                             @foreach($ejemplares as $ejemplar)
                                 <tr class="odd gradeX"> 
                                     <td style="visibility: hidden"> {{ $ejemplar->id }} </td>                                   
-                                    <td> {{ $ejemplar->libro_id }} </td>
+                                    <td> 
+                                    	{{-- {{ $ejemplar->libro_id }}  --}}
+										@foreach($libros as $libro)
+											@if($ejemplar->libro_id == $libro->id)
+											{{ $libro->titulo }}
+											@endif
+										@endforeach
+                                    </td>
                                     <td>
                                         {{ $ejemplar->codigo }}
                                     </td>
-                                    <td class="center"> {{ $ejemplar->estado }} </td>
-
+                                    <td class="center"> 
+                                    	{{-- {{ $ejemplar->estado }} --}}
+                                    	@if($ejemplar->estado == '1')
+                                    		Disponible
+                                    	@else
+                                    		Prestado
+                                    	@endif
+                                    </td>
                                     <td>
                                         <div class="btn-group">
                                             <button class="btn btn-xs green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> Acciones
