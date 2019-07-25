@@ -112,7 +112,7 @@ Route::post('/crearejemplar', 'EjemplarController@store');
 
 // Route::get('/aeditar/{ejemplar}', 'EjemplarController@showupdate')->name('ejemplar.edit');
 
-// Route::put('/ejemplar/{ejemplar}', 'EjemplarController@update')->name('ejemplar.update');
+Route::put('/ejemplar/{ejemplar}', 'EjemplarController@update')->name('ejemplar.update');
 
 Route::delete('/ejemplar/{ejemplar}', 'EjemplarController@destroy')->name('ejemplar.destroy');
 

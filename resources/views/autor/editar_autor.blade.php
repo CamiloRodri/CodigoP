@@ -10,7 +10,7 @@
 		            <div class="portlet-title">
 		                <div class="caption">
 		                    <i class="icon-bubble font-green"></i>
-		                    <span class="caption-subject font-green bold uppercase">Agregar Autor</span>
+		                    <span class="caption-subject font-green bold uppercase">Editar Autor {{ $autor->name_autor }}</span>
 		                </div>
 		            </div>
 		            <div class="portlet-body">

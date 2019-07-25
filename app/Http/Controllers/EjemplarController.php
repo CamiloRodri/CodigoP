@@ -18,7 +18,8 @@ class EjemplarController extends Controller
 
     public function show(Ejemplar $ejemplar)
     {
-    	return view('ejemplar.perfil_ejemplar', compact('ejemplar'));
+    	$libros = Libro::all();
+    	return view('ejemplar.editar_ejemplar', compact('ejemplar', 'libros'));
     }
 
     public function create()
@@ -53,6 +54,12 @@ class EjemplarController extends Controller
     public function destroy(Ejemplar $ejemplar)
     {
         $ejemplar->delete();
+        return redirect()->route('ejemplar.list');
+    }
+
+    public function update(Ejemplar $ejemplar)
+    {
+        $ejemplar->update(request()->all());
         return redirect()->route('ejemplar.list');
     }
 }
