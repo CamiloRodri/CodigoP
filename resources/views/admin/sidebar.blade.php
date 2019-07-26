@@ -37,6 +37,22 @@
                             <span class="title">Visión</span>
                         </a>
                     </li>
+                    @if(Entrust::can('modificar-mision'))
+                    <li class="nav-item start ">
+                        <a href="{{ route('mision.edit') }}" class="nav-link ">
+                            <i class="fa fa-hand-o-right"></i>
+                            <span class="title">Modificar Misión</span>
+                        </a>
+                    </li>
+                    @endif
+                    @if(Entrust::can('modificar-vision'))
+                    <li class="nav-item start ">
+                        <a href="{{ route('vision.edit') }}" class="nav-link ">
+                            <i class="icon-bulb"></i>
+                            <span class="title">Modificar Visión</span>
+                        </a>
+                    </li>
+                    @endif
                 </ul>
             </li>
             
@@ -47,21 +63,50 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="nav-item  ">
-                        <a href="{{ asset('libros') }}" class="nav-link ">
+                    <li class="nav-item ">
+                        <a href="{{ route('libro.list') }}" class="nav-link ">
+                            <i class="fa fa-book"></i>
                             <span class="title">Libros</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
-                        <a href="{{ asset('libros') }}" class="nav-link ">
+                        <a href="{{ asset('autor') }}" class="nav-link ">
+                            <i class="fa fa-male"></i>
                             <span class="title">Autores</span>
                         </a>
                     </li>
+                    @if(Entrust::can('ver-ejemplar'))
                     <li class="nav-item  ">
-                        <a href="{{ asset('libros') }}" class="nav-link ">
+                        <a href="{{ route('ejemplar.list') }}" class="nav-link ">
+                            <i class="fa fa-bookmark"></i>
+                            <span class="title">Ejemplar</span>
+                        </a>
+                    </li>
+                    @endif
+                    @if(Entrust::can('agregar-libros'))
+                    <li class="nav-item  ">
+                        <a href="{{ route('libro.create') }}" class="nav-link ">
+                            <i class="fa fa-book"></i>
                             <span class="title">Agregar Libros</span>
                         </a>
                     </li>
+                    @endif
+                    @if(Entrust::can('agregar-autores'))
+                    <li class="nav-item  ">
+                        <a href="{{ route('autor.create') }}" class="nav-link ">
+                            <i class="fa fa-male"></i>
+                            <span class="title">Agregar Autores</span>
+                        </a>
+                    </li>
+                    @endif
+                    @if(Entrust::can('agregar-ejemplar'))
+                    <li class="nav-item  ">
+                        <a href="{{ route('ejemplar.create') }}" class="nav-link ">
+                            <i class="fa fa-bookmark"></i>
+                            <span class="title">Agregar Ejemplar</span>
+                        </a>
+                    </li>
+                    @endif
                 </ul>
             </li>
             
@@ -74,11 +119,13 @@
                 <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="charts_amcharts.html" class="nav-link ">
+                            <i class="fa fa-money"></i>
                             <span class="title">Ventas</span>
                         </a>
                     </li>
                     <li class="nav-item  ">
                         <a href="charts_amcharts.html" class="nav-link ">
+                            <i class="fa fa-upload"></i>
                             <span class="title">Pedido</span>
                         </a>
                     </li>
@@ -93,13 +140,14 @@
                 <ul class="sub-menu">
                     <li class="nav-item  ">
                         <a href="maps_google.html" class="nav-link ">
+                            <i class="fa fa-map"></i>
                             <span class="title">Google Maps</span>
                         </a>
                     </li>
                 </ul>
             </li>
             
-            
+            @if(Entrust::hasRole('Administrador'))
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-user"></i>
@@ -115,7 +163,7 @@
                     </li>
                 </ul>
             </li>
-            
+            @endif
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>

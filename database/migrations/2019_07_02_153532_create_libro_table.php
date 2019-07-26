@@ -20,6 +20,7 @@ class CreateLibroTable extends Migration
             $table->string('foto')->nullable();
             $table->text('descripcion');
             $table->double('calificacion');
+            $table->string('fecha_publicacion');
             $table->unsignedInteger('autor_id');
             $table->foreign('autor_id')->references('id')->on('autor');  
             $table->timestamps();

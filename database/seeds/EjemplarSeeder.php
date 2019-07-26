@@ -16,7 +16,9 @@ class EjemplarSeeder extends Seeder
     {
     	$libro = Libro::where('titulo', 'Satanas')->value('id');
         Ejemplar::create([
-        	'libro_id' => $libro
+        	'libro_id' => $libro,
+            'codigo' => 'I87204713',
+            'estado' => true
         ]);
     }
 }

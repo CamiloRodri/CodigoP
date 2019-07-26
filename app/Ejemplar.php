@@ -8,4 +8,8 @@ class Ejemplar extends Model
 {
     //
     protected $table = 'ejemplar';
+
+    protected $fillable = [
+    	'libro_id', 'codigo', 'estado'
+    ];
 }

@@ -38,12 +38,30 @@
             <div class="col-md-3">
                 <ul class="list-unstyled profile-nav">
                     <li>
-                        <img src="../{{ $libro->foto }}" width="500" height="230" class="img-responsive pic-bordered" alt="" />
+                        <img src="../images/Libros/{{ $libro->foto }}" width="500" height="230" class="img-responsive pic-bordered" alt="" />
                        {{--  <a href="javascript:;" class="profile-edit"> </a> --}}
                     </li>
                     <li>
                         <a href="javascript:;"> Prestamo </a>
                     </li>
+                    @if(Entrust::hasRole('Administrador'))
+                    <li>
+                        <a href="{{ route('libro.edit', ['id' => $libro->id]) }}"> Editar </a>
+                    </li>
+                    @endif
+                    @if(Entrust::hasRole('Administrador'))
+                    <form action="{{ route('libro.destroy', ['id' => $libro->id]) }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green">Eliminar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    @endif
                 </ul>
             </div>
             <div class="col-md-9">
@@ -56,6 +74,10 @@
 	                        	echo $var 
 	                        ?>
                         </p>
+
+                        <font size=3><b>Numero de Paginas:</b>  {{ $libro->paginas }}</font>
+						<p></p>
+                        <font size=3><b>Año de Publicación:</b>  {{ $libro->fecha_publicacion }}</font>
                         {{-- <ul class="list-inline">
                             <li>
                                 <i class="fa fa-map-marker"></i> Spain </li>
@@ -76,6 +98,8 @@
                 <!--end row-->
                 
             </div>
+             
+			
         </div>
 	</div>
 

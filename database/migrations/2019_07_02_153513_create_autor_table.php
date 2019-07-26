@@ -16,6 +16,8 @@ class CreateAutorTable extends Migration
         Schema::create('autor', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name_autor');
+            $table->string('foto')->nullable();
+            $table->text('biografia');
             $table->timestamps();
         });
     }

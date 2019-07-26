@@ -1,7 +1,7 @@
 @extends('admin.header')
 
 @section('content')
-
+    @if(Entrust::can('editar-usuarios'))    
 					<h1 class="page-title"> Editar Perfil
                     </h1>
                     <!-- END PAGE HEADER-->
@@ -13,14 +13,13 @@
                                 <div class="portlet light profile-sidebar-portlet ">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class="profile-userpic">
-                                        
-                                        <img src="../{{ $user->foto }}" class="img-responsive" alt=""> </div> 
+                                        <img src="../images/Usuarios/{{ $user->foto }}" class="img-responsive" alt=""> </div> 
                                         {{-- <img src="{{ asset('assets/pages/img/avatars/team1.jpg') }}" class="img-responsive" alt=""> </div> --}}
                                     <!-- END SIDEBAR USERPIC -->
                                     <!-- SIDEBAR USER TITLE -->
                                     <div class="profile-usertitle">
                                         <div class="profile-usertitle-name">{{ $user->name }} {{ $user->lastname }}</div>
-                                        <div class="profile-usertitle-job"> {{ $rol->nombre_rol }} </div>
+                                        <div class="profile-usertitle-job"> {{ $rol->name }} </div>
                                     </div>
                                     <!-- END SIDEBAR USER TITLE -->
                                     <!-- SIDEBAR MENU -->
@@ -44,7 +43,7 @@
                                 <div class="portlet light ">
                                     <div>
                                         <h4 class="profile-desc-title">Acerca de {{ $user->name }}</h4>
-                                        <span class="profile-desc-text"> {{ $rol->nombre_rol }} </span>
+                                        <span class="profile-desc-text"> {{ $rol->name }} </span>
                                         <div class="margin-top-20 profile-desc-link">
                                             <i class="fa fa-globe"></i>
                                             <a href="http://www.keenthemes.com">{{ $user->email }}</a>
@@ -163,7 +162,7 @@
                             <!-- END PROFILE CONTENT -->
                         </div>
                     </div>
-
+    @endif
 
 {{-- 	{{ $user->id }} --}}
 

@@ -1,8 +1,8 @@
-@extends ('admin.header')
+@extends('admin.header')
 
-@section('content')  
+@section('content')
 
-					<h1 class="page-title"> Configurar | Perfil
+                    <h1 class="page-title"> Editar Perfil
                     </h1>
                     <!-- END PAGE HEADER-->
                     <div class="row">
@@ -13,12 +13,13 @@
                                 <div class="portlet light profile-sidebar-portlet ">
                                     <!-- SIDEBAR USERPIC -->
                                     <div class="profile-userpic">
-                                        <img src="../{{ $user->foto }}" class="img-responsive" alt=""> </div>
+                                        <img src="../images/Usuarios/{{ $user->foto }}" class="img-responsive" alt=""> </div> 
+                                        {{-- <img src="{{ asset('assets/pages/img/avatars/team1.jpg') }}" class="img-responsive" alt=""> </div> --}}
                                     <!-- END SIDEBAR USERPIC -->
                                     <!-- SIDEBAR USER TITLE -->
                                     <div class="profile-usertitle">
                                         <div class="profile-usertitle-name">{{ $user->name }} {{ $user->lastname }}</div>
-                                        <div class="profile-usertitle-job"> {{ $rol->nombre_rol }} </div>
+                                        <div class="profile-usertitle-job"> {{ $rol->name }} </div>
                                     </div>
                                     <!-- END SIDEBAR USER TITLE -->
                                     <!-- SIDEBAR MENU -->
@@ -42,7 +43,7 @@
                                 <div class="portlet light ">
                                     <div>
                                         <h4 class="profile-desc-title">Acerca de {{ $user->name }}</h4>
-                                        <span class="profile-desc-text"> {{ $rol->nombre_rol }} </span>
+                                        <span class="profile-desc-text"> {{ $rol->name }} </span>
                                         <div class="margin-top-20 profile-desc-link">
                                             <i class="fa fa-globe"></i>
                                             <a href="http://www.keenthemes.com">{{ $user->email }}</a>
@@ -79,22 +80,25 @@
                                                 <div class="tab-content">
                                                     <!-- PERSONAL INFO TAB -->
                                                     <div class="tab-pane active" id="tab_1_1">
-                                                        <form role="form" action="#">
+                                                        <form method="POST" role="form" action="{{ url("usuario/{$user->id}") }}">
+                                                            {{-- {{ @method('PUT') }} --}}
+                                                            {{ method_field('PUT') }}
+                                                            {{ csrf_field() }}
                                                             <div class="form-group">
                                                                 <label class="control-label">Nombre</label>
-                                                                <input type="text" placeholder="{{ $user->name }}" class="form-control" /> </div>
+                                                                <input type="text" value="{{ $user->name }}" placeholder="{{ $user->name }}" class="form-control" name="name"/> </div>
                                                             <div class="form-group">
                                                                 <label class="control-label">Apellido</label>
-                                                                <input type="text" placeholder="{{ $user->lastname }}" class="form-control" /> </div>
+                                                                <input type="text" value="{{ $user->lastname }}" placeholder="{{ $user->lastname }}" class="form-control" name="lastname"/> </div>
                                                             <div class="form-group">
                                                                 <label class="control-label">Numero de Telefono</label>
-                                                                <input type="text" placeholder="{{ $user->telefono }}" class="form-control" /> </div>
+                                                                <input type="text" value="{{ $user->telefono }}" placeholder="{{ $user->telefono }}" class="form-control" name="number"/> </div>
                                                             
                                                             <div class="form-group">
                                                                 <label class="control-label">Email</label>
-                                                                <input type="text" placeholder="{{ $user->email }}" class="form-control" /> </div>
+                                                                <input type="text" value="{{ $user->email }}" placeholder="{{ $user->email }}" class="form-control" name="email"/> </div>
                                                             <div class="margiv-top-10">
-                                                                <a href="javascript:;" class="btn green"> Editar </a>
+                                                                <button type="submit" class="btn green">Editar</button>
                                                                 {{-- <a href="javascript:;" class="btn default"> Cancel </a> --}}
                                                             </div>
                                                         </form>
@@ -159,5 +163,7 @@
                         </div>
                     </div>
 
-{{-- 	{{ $user->id }} --}}
+
+{{--    {{ $user->id }} --}}
+
 @endsection
