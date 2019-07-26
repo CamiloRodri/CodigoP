@@ -19,11 +19,11 @@
 	    <ul class="page-breadcrumb">
 	        <li>
 	            <i class="icon-home"></i>
-	            <a href="index.html">Home</a>
+	            <a href="{{ asset('inicio') }}">Home</a>
 	            <i class="fa fa-angle-right"></i>
 	        </li>
 	        <li>
-	            <span>Libros</span>
+                <a href="{{ route('libro.list') }}">Libros</a>
 	            <i class="fa fa-angle-right"></i>
 	        </li>
 	        <li>
@@ -42,9 +42,31 @@
                        {{--  <a href="javascript:;" class="profile-edit"> </a> --}}
                     </li>
                     @if(Entrust::can('ver-carrito'))
-                    <li>
+                    {{-- <li>
                         <a href="javascript:;"> Añadir al Carrito </a>
+                    </li> --}}
+                    <li> <br> </li>
+                    <li>
+                        <font size=3><b>Cantidades Disponibles:</b>  {{ $countejemplar }}</font>
                     </li>
+                    <form method="POST" action="{{ url("agcarrito") }}" id="form_sample_2" class="form-horizontal" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                            <li>
+                                <input type="hidden" class="form-control" name="ejemplar_id" value="{{ $libro->id }}" visible="false" /> 
+                                <br> 
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-md-offset-3 col-md-9">
+                                            @if($countejemplar == 0)
+                                                <button type="submit" class="btn green" disabled>Añadir al Carrito</button>
+                                            @else
+                                                <button type="submit" class="btn green" >Añadir al Carrito</button>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                    </form>
                     @endif
                     @if(Entrust::hasRole('Administrador'))
                     <li>

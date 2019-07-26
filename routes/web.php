@@ -123,3 +123,8 @@ Route::delete('/ejemplar/{ejemplar}', 'EjemplarController@destroy')->name('ejemp
 
 //Prestamo
 
+
+
+//Carrito
+Route::post('/agcarrito', 'CarritoController@store');
+

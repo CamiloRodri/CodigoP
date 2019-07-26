@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Libro;
 use App\Autor;
+use App\Ejemplar;
 use Image;
 
 use Illuminate\Http\Request;
@@ -18,7 +19,11 @@ class LibroController extends Controller
 
     public function show(Libro $libro)
     {
-    	return view('biblioteca.perfil_book', compact('libro'));
+        //dd($libro->id);
+        $countejemplar = Ejemplar::all()->where('libro_id', $libro->id)->where('estado_id', '1')->count();
+        $ejemplar = Ejemplar::all()->where('libro_id', $libro->id)->where('estado_id', '1')->first();
+        //dd($ejemplar);
+    	return view('biblioteca.perfil_book', compact('libro','countejemplar', 'ejemplar'));
     }
 
     public function create()

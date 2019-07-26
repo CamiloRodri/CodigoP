@@ -36,7 +36,7 @@ class EjemplarController extends Controller
         $data = request()->validate([
                 'libro_id' => 'required',
                 'codigo' => 'required',
-                'estado' => ''
+                'estado_id' => ''
         ], [
             'libro_id.required' => 'El campo es requerido',
             'codigo.required' => 'El campo es requerido'
@@ -46,7 +46,7 @@ class EjemplarController extends Controller
         $ejemplar = new Ejemplar();
         $ejemplar->libro_id = $data['libro_id'];
         $ejemplar->codigo = $data['codigo']; 
-        $ejemplar->estado  = true;
+        $ejemplar->estado_id  = 1;
         $ejemplar->save();
 
         
