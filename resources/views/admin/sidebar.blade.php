@@ -109,7 +109,16 @@
                     @endif
                 </ul>
             </li>
-            
+            @if(Entrust::can('ver-carrito'))
+            <li class="nav-item  ">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-basket"></i>
+                    <span class="title">Carrito</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+            @endif
+            @if(Entrust::can('prestamo'))
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-bar-chart"></i>
@@ -117,20 +126,25 @@
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
+                    @if(Entrust::can('ver-ventas'))
                     <li class="nav-item  ">
                         <a href="charts_amcharts.html" class="nav-link ">
                             <i class="fa fa-money"></i>
                             <span class="title">Ventas</span>
                         </a>
                     </li>
+                    @endif
+                    @if(Entrust::can('ver-pedido'))
                     <li class="nav-item  ">
                         <a href="charts_amcharts.html" class="nav-link ">
                             <i class="fa fa-upload"></i>
                             <span class="title">Pedido</span>
                         </a>
                     </li>
+                    @endif
                 </ul>
             </li>
+            @endif
             <li class="nav-item  ">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-pointer"></i>

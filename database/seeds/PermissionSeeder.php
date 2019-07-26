@@ -113,12 +113,60 @@ class PermissionSeeder extends Seeder
         $admin->attachPermission($permission);
 
         $permission  =  Permission::create([
-                        'name' => 'pedido',
-                        'display_name' => 'pedido',
-                        'description' => 'Sidebar Pedido'
+                        'name' => 'agregar-ventas',
+                        'display_name' => 'agregar-ventas',
+                        'description' => 'Agregar Ventas'
                     ]);
         $admin->attachPermission($permission);
-        $user->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'editar-ventas',
+                        'display_name' => 'editar-ventas',
+                        'description' => 'Editar Ventas'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'eliminar-ventas',
+                        'display_name' => 'eliminar-ventas',
+                        'description' => 'Eliminar Ventas'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'ver-pedido',
+                        'display_name' => 'ver-pedido',
+                        'description' => 'Ver Pedido'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'agregar-pedido',
+                        'display_name' => 'agregar-pedido',
+                        'description' => 'Agregar Pedido'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'editar-pedido',
+                        'display_name' => 'editar-pedido',
+                        'description' => 'Editar Pedido'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'eliminar-pedido',
+                        'display_name' => 'eliminar-pedido',
+                        'description' => 'Eliminar Pedido'
+                    ]);
+        $admin->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'prestamo',
+                        'display_name' => 'prestamo',
+                        'description' => 'Sidebar Prestamo'
+                    ]);
+        $admin->attachPermission($permission);
 
         $permission  =  Permission::create([
                         'name' => 'ver-usuarios',
@@ -176,8 +224,38 @@ class PermissionSeeder extends Seeder
                     ]);
         $admin->attachPermission($permission);
 
+        $permission  =  Permission::create([
+                        'name' => 'ver-carrito',
+                        'display_name' => 'ver-carrito',
+                        'description' => 'Ver Carrito'
+                    ]);
+        $user->attachPermission($permission);
 
+        $permission  =  Permission::create([
+                        'name' => 'agregar-carrito',
+                        'display_name' => 'agregar-carrito',
+                        'description' => 'Agregar Carrito'
+                    ]);
+        $user->attachPermission($permission);
 
+        $permission  =  Permission::create([
+                        'name' => 'editar-carrito',
+                        'display_name' => 'editar-carrito',
+                        'description' => 'Editar Carrito'
+                    ]);
+        $user->attachPermission($permission);
+
+        $permission  =  Permission::create([
+                        'name' => 'eliminar-carrito',
+                        'display_name' => 'eliminar-carrito',
+                        'description' => 'Eliminar Carrito'
+                    ]);
+        $user->attachPermission($permission);
+
+        
+        
+
+        
 
         // $role = Role::where('name', '=', 'Administrador')->first();
         // $permission = Permission::where('name', 'modificar-mision')->first();

@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ejemplar extends Model
+class EstadoEjemplar extends Model
 {
     //
-    protected $table = 'ejemplar';
+    protected $table = 'estado_ejemplar';
 
     protected $fillable = [
-    	'libro_id', 'codigo', 'estado_id'
+    	'estado'
     ];
 }

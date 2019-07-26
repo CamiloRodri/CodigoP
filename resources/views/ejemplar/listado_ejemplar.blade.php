@@ -98,11 +98,12 @@
                                     </td>
                                     <td class="center"> 
                                     	{{-- {{ $ejemplar->estado }} --}}
-                                    	@if($ejemplar->estado == '1')
-                                    		Disponible
-                                    	@else
-                                    		Prestado
-                                    	@endif
+                                        @foreach($estados as $estado)
+                                            @if($ejemplar->estado_id == $estado->id)
+                                                {{ $estado->estado }}
+                                            @endif
+                                        @endforeach
+                                    	
                                     </td>
                                     <td>
                                         <div class="btn-group">

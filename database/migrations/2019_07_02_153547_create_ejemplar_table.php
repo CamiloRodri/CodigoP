@@ -19,7 +19,8 @@ class CreateEjemplarTable extends Migration
             $table->foreign('libro_id')->references('id')->on('libro');
             $table->string('codigo');
             //1 Disponible - 0 Prestado
-            $table->boolean('estado')->nullable();
+            $table->unsignedInteger('estado_id');
+            $table->foreign('estado_id')->references('id')->on('estado_ejemplar');
             $table->timestamps();
         });
     }

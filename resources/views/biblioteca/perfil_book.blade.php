@@ -42,7 +42,7 @@
                        {{--  <a href="javascript:;" class="profile-edit"> </a> --}}
                     </li>
                     <li>
-                        <a href="javascript:;"> Prestamo </a>
+                        <a href="javascript:;"> Añadir al Carrito </a>
                     </li>
                     @if(Entrust::hasRole('Administrador'))
                     <li>

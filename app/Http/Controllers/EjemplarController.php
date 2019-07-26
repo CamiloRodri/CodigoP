@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ejemplar;
 use App\Libro;
+use App\EstadoEjemplar;
 
 class EjemplarController extends Controller
 {
@@ -13,7 +14,8 @@ class EjemplarController extends Controller
     {
     	$libros = Libro::all();
     	$ejemplares = Ejemplar::all();
-    	return view('ejemplar.listado_ejemplar', compact('ejemplares', 'libros'));
+        $estados = EstadoEjemplar::all();
+    	return view('ejemplar.listado_ejemplar', compact('ejemplares', 'libros', 'estados'));
     }
 
     public function show(Ejemplar $ejemplar)
