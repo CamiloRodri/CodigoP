@@ -22,6 +22,10 @@ class EstadoEjemplarSeeder extends Seeder
         $est->save();
 
         EstadoEjemplar::create([
+            'estado' => 'Por Reclamar'
+        ]);
+
+        EstadoEjemplar::create([
         	'estado' => 'Prestado'
         ]);
     }
