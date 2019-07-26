@@ -121,3 +121,5 @@ Route::put('/ejemplar/{ejemplar}', 'EjemplarController@update')->name('ejemplar.
 
 Route::delete('/ejemplar/{ejemplar}', 'EjemplarController@destroy')->name('ejemplar.destroy');
 
+//Prestamo
+
