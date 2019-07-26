@@ -41,9 +41,11 @@
                         <img src="../images/Libros/{{ $libro->foto }}" width="500" height="230" class="img-responsive pic-bordered" alt="" />
                        {{--  <a href="javascript:;" class="profile-edit"> </a> --}}
                     </li>
+                    @if(Entrust::can('ver-carrito'))
                     <li>
                         <a href="javascript:;"> Añadir al Carrito </a>
                     </li>
+                    @endif
                     @if(Entrust::hasRole('Administrador'))
                     <li>
                         <a href="{{ route('libro.edit', ['id' => $libro->id]) }}"> Editar </a>

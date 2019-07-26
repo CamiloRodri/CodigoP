@@ -15,23 +15,12 @@ class EjemplarSeeder extends Seeder
      */
     public function run()
     {
-            EstadoEjemplar::create([
-            'estado' => 'Disponible'
-        ]);
-
-        $est = new EstadoEjemplar;
-        $est->estado = 'En Carrito';
-        $est->save();
-
-        EstadoEjemplar::create([
-            'estado' => 'Prestado'
-        ]);
-
+        $estado = EstadoEjemplar::where('estado', 'Disponible')->value('id');
     	$libro = Libro::where('titulo', 'Satanas')->value('id');
         Ejemplar::create([
         	'libro_id' => $libro,
             'codigo' => 'I87204713',
-            'estado_id' => '1'
+            'estado_id' => $estado
         ]);
     }
 }
