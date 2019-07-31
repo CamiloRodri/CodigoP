@@ -4,6 +4,7 @@
     <!-- BEGIN HEAD -->
     <head>
         @include('admin.head')  
+        @yield('head')
     </head>
     <!-- END HEAD -->
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
@@ -152,6 +153,7 @@
 <![endif]-->
             <!-- BEGIN CORE PLUGINS -->
             @include('admin.foot')
+            @yield('foot')
     </body>
 
 </html>
