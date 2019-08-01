@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\SubCategoria;
+use App\Categoria;
 
 class SubCategoriaSeeder extends Seeder
 {
@@ -13,5 +14,10 @@ class SubCategoriaSeeder extends Seeder
     public function run()
     {
         //
+        $ficcion = Categoria::where('categoria_nombre' , 'Literatura')->value('id');
+        SubCategoria::create([
+        	'subcategoria_nombre' => 'Ficción',
+        	'categoria_id' => $ficcion
+        ]);
     }
 }
