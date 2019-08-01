@@ -48,6 +48,7 @@ Route::get('libro/prueba', function () {
 
 Route::get('/inicio', 'InicioController@index')->name('index');
 
+//Usuario
 Route::get('/usuario/perfil', 'UserController@show_account')->name('usuario.perfil');
 
 Route::get('/usuario/{user}', 'UserController@show')->name('usuario.show');
@@ -61,9 +62,6 @@ Route::get('/lista', 'UserController@index')->name('usuario.list');
 Route::get('/nuevo', 'UserController@create')->name('usuario.create');
 
 Route::post('/crear', 'UserController@store');
-// Route::get('lista', function () {
-//     return view('usuario.listado_usua');
-// });
 
 //Informacion
 Route::get('/mision', 'InformacionController@show_mision')->name('mision');
@@ -108,7 +106,7 @@ Route::put('/autor/{autor}', 'AutorController@update')->name('autor.update');
 
 Route::delete('/autor/{autor}', 'AutorController@destroy')->name('autor.destroy');
 
-//Ejempla
+//Ejemplar
 Route::get('/ejemplar', 'EjemplarController@index')->name('ejemplar.list');
 
 Route::get('/ejemplar/{ejemplar}', 'EjemplarController@show')->name('ejemplar.show');
@@ -127,4 +125,6 @@ Route::delete('/ejemplar/{ejemplar}', 'EjemplarController@destroy')->name('ejemp
 
 //Carrito
 Route::post('/agcarrito', 'CarritoController@store');
+
+Route::get('/carrito', 'CarritoController@index')->name('carrito.list');
 

@@ -19,6 +19,17 @@ class CarritoController extends Controller
         $this->middleware('auth');
     }
     
+    public function index()
+    {
+        //
+        $carritos = Carrito::all();
+        $users = User::all();
+        $ejemplares = Ejemplar::all();
+        dd(Auth::user()->id)
+        $libros = Libros::all();
+        return view('carrito.listado_carrito', compact('carritos'));
+    }
+
     public function store()
     {
         //dd(request()->ejemplar_id);
@@ -34,4 +45,7 @@ class CarritoController extends Controller
 
         return redirect()->route('libro.list');
     }
+
+    
+
 }

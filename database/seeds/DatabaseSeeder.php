@@ -13,12 +13,13 @@ class DatabaseSeeder extends Seeder
     {
     	$this->truncateTables([
     		'users', 'autor', 'carrito', 'ejemplar', 'estado_ejemplar', 'informacion', 'libro',
-            'permissions', 'permission_role', 'prestamo', 'roles', 'role_user'
+            'permissions', 'permission_role', 'prestamo', 'roles', 'role_user', 'categoria'
 
       	]);
 
         // $this->call(UsersTableSeeder::class);
         $this->call(AutorSeeder::class);
+        $this->call(CategoriaSeeder::class);
         $this->call(LibroSeeder::class);
         $this->call(EstadoEjemplarSeeder::class);
         $this->call(EjemplarSeeder::class);

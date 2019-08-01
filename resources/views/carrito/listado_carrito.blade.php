@@ -1,94 +1,93 @@
+@extends ('admin.header')
 
-@extends('admin.header')
+@section('content')  
+@if(Entrust::can('ver-carrito'))     
+{{-- {{ toastr.info("{{ Session::get('message') }}") }} --}}
+<!-- END THEME PANEL -->
+    <h1 class="page-title"> Carrito
+    </h1>
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <i class="icon-home"></i>
+                <a href="index.html">Home</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <a href="#">Carrito</a>
+                <i class="fa fa-angle-right"></i>
+            </li>
+            <li>
+                <span>Lista</span>
+            </li>
+        </ul>
+    </div>
+    {{-- {{ toastr.info("hola")s }} --}}
+    {{-- {{ dd(array_get($notification, 'message')) }} --}}
+    {{-- {{ dd(Session::has(array_get($notification, 'message'))) }} --}}
+    <!-- END PAGE HEADER-->
+    {{-- {{ dd($notification) }} --}}
 
-@section('content')
-	<!-- BEGIN CONTENT -->
-
-                    <h1 class="page-title"> Listado de Libros
-                   </h1>
-                    <div class="page-bar">
-                        <ul class="page-breadcrumb">
-                            <li>
-                                <i class="icon-home"></i>
-                                <a href="{{ asset('inicio') }}">Home</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                            <li>
-                                <span>Libros</span>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                            <li>
-                                <span>Lista</span>
-                            </li>
-                        </ul>
-                        
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <div class="portlet light ">
+                <div class="portlet-title">
+                    <div class="caption font-dark">
+                        <i class="icon-settings font-dark"></i>
+                        <span class="caption-subject bold uppercase"> Carrito</span>
                     </div>
-                    <!-- END PAGE HEADER-->
-                    <!-- BEGIN : OVERLAY -->
-                    <div class="row">
+                </div>
+                <div class="portlet-body">
+                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
+                        <thead>
+                            <tr>
+                                <th style="visibility: hidden"> Numero </th>
+                                <th> Ejemplar </th>
+                                <th> Usuario </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            @foreach($carritos as $carrito)
+                                <tr class="odd gradeX"> 
+                                    <td style="visibility: hidden" width="1" height="1"> 
+                                        {{ $carrito->id }} 
+                                    </td>   
+                                    <td class="center"> 
+                                        {{ $carrito->ejemplar_id }} 
+                                    </td>
+                                    <td class="center"> 
+                                        {{ $carrito->user_id }} 
+                                    </td>
+                                </tr >
+                                
+                            @endforeach
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- END EXAMPLE TABLE PORTLET-->
+           
+        </div>
+    </div>
+@endif
 
-                        {{-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="portlet light portlet-fit ">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class=" icon-layers font-green"></i>
-                                        <span class="caption-subject font-green bold uppercase">Overlay 5</span>
-                                   </div>
-                                </div>
-                                <div class="portlet-body">
-                                    <div class="mt-element-overlay">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="mt-overlay-5">
-                                                    <img src="../assets/pages/img/background/12.jpg" />
-                                                    <div class="mt-overlay">
-                                                        <h2>Overlay Title</h2>
-                                                        <p>
-                                                            <a class="uppercase" href="#">Learn More</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
+@endsection
 
-                        
-                        @foreach($libros as $libro)
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="portlet light portlet-fit ">
-                                <div class="portlet-title">
-                                    <div class="caption">
-                                        <i class=" icon-layers font-green"></i>
-                                        <span class="caption-subject font-green bold uppercase">{{ $libro->titulo }}</span>
-                                    </div>
-                                </div>
-                                <div class="portlet-body">
-                                    <div class="mt-element-overlay">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="mt-overlay-6">
-                                                    <img src="../images/Libros/{{ $libro->foto }}" width="500" height="250"/>
-                                                    <div class="mt-overlay">
-                                                        <h2>{{ $libro->titulo }}</h2>
-                                                        <p>
-                                                            <a class="mt-info uppercase btn default btn-outline" href="{{ route('libro.show', ['id' => $libro->id]) }}">Leer Mas</a>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
+@section('head')
 
-                        
+@endsection
 
 
-                    </div>
-                    <!-- END : OVERLAY -->
+@section('foot')
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="../assets/global/scripts/datatable.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/datatables/datatables.min.js" type="text/javascript"></script>
+    <script src="../assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="../assets/pages/scripts/table-datatables-managed.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
 @endsection
