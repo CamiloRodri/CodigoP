@@ -128,3 +128,5 @@ Route::post('/agcarrito', 'CarritoController@store');
 
 Route::get('/carrito', 'CarritoController@index')->name('carrito.list');
 
+Route::get('/codigo', 'CarritoController@show')->name('codigo.show');
+

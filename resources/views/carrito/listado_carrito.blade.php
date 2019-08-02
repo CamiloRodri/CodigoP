@@ -38,7 +38,21 @@
                         <span class="caption-subject bold uppercase"> Carrito</span>
                     </div>
                 </div>
+
                 <div class="portlet-body">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="btn-group">
+                            <a href="{{ route('codigo.show') }}">
+                            <button id="sample_editable_1_new" class="btn sbold green"> Confirmar Pedido                                       
+                                <i class="fa fa-check"></i> 
+                            </button>
+                            </a>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                    </div>
                     <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
                         <thead>
                             <tr>
@@ -79,6 +93,7 @@
                         </tbody>
                     </table>
                 </div>
+
             </div>
             <!-- END EXAMPLE TABLE PORTLET-->
            

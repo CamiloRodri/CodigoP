@@ -24,18 +24,10 @@ class CarritoController extends Controller
     
     public function index()
     {
-
-        $ejemplar = new Ejemplar;
-        $libro = new Libro;
-        //$subcateg = SubCategoria::with(['categoria'])->get();
         //$carritos = Carrito::all()->where('user_id', Auth::user()->id );
-
                                                     //$carritos = Categoria::with('subcategoria')->get();
         $carritos = Carrito::with(['ejemplar', 'user', 'ejemplar.libro'])->where('user_id', Auth::user()->id )->get();
-        //dd($carritos);
-        $libros = Libro::all();
-        //dd(Auth::user()->id);
-        return view('carrito.listado_carrito', compact('carritos', 'libros'));
+        return view('carrito.listado_carrito', compact('carritos'));
     }
 
     public function store()
@@ -54,6 +46,11 @@ class CarritoController extends Controller
         return redirect()->route('libro.list');
     }
 
+    public function show()
+    {
+        $carritos = Carrito::with(['ejemplar', 'user', 'ejemplar.libro'])->where('user_id', Auth::user()->id )->get();
+        return redirect()->route('codigo.show');
+    }
     
 
 }
