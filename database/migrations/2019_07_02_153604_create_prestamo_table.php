@@ -23,7 +23,8 @@ class CreatePrestamoTable extends Migration
             $table->string('fecha_inicio');
             $table->string('fecha_fin');
             $table->boolean('estado');
-
+            $table->unsignedInteger('codigo');
+            $table->foreign('codigo')->references('id')->on('codigos');
             $table->timestamps();
         });
     }

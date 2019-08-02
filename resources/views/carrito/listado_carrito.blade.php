@@ -43,7 +43,7 @@
                     <div class="row">
                     <div class="col-md-6">
                         <div class="btn-group">
-                            <a href="{{ route('codigo.show') }}">
+                            <a href="{{ route('codigo.generate') }}">
                             <button id="sample_editable_1_new" class="btn sbold green"> Confirmar Pedido                                       
                                 <i class="fa fa-check"></i> 
                             </button>

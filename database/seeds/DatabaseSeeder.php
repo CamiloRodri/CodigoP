@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     	$this->truncateTables([
     		'users', 'autor', 'carrito', 'ejemplar', 'estado_ejemplar', 'informacion', 'libro',
             'permissions', 'permission_role', 'prestamo', 'roles', 'role_user', 'categoria', 
-            'subcategoria'
+            'subcategoria' , 'codigos'
 
       	]);
 

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Carrito;
 use App\Ejemplar;
-use App\SubCategoria;
-use App\Categoria;
+use App\Prestamo;
 use App\Libro;
+use App\Codigo;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class CarritoController extends Controller
 {
@@ -46,11 +48,45 @@ class CarritoController extends Controller
         return redirect()->route('libro.list');
     }
 
-    public function show()
+    public function generate()
     {
         $carritos = Carrito::with(['ejemplar', 'user', 'ejemplar.libro'])->where('user_id', Auth::user()->id )->get();
+        //$now = new \DateTime();
+        $todayDate = Carbon::now();
+        $todayDate = $todayDate->format('d-m-Y');
+
+        $date = Carbon::now();
+        $endDate = $date->addDays(7);  
+        $endDate = $date->format('d-m-Y');
+        $random = Str::random();
+        foreach ($carritos as $carrito) {
+            $ejemplarup = Ejemplar::where('id', $carrito->ejemplar_id)->first();
+            $ejemplarup->estado_id = '3';
+            $ejemplarup->save();
+
+            $carritode = Carrito::all()->where('id', $carrito->id);
+            $carrito->delete();
+
+            $codigo = new Codigo;
+            $codigo->codigo = $random;
+            $codigo->save();
+
+            $prestamo = new Prestamo;  
+            $prestamo->user_id = $carrito->user_id;
+            $prestamo->ejemplar_id = $carrito->ejemplar_id;
+            $prestamo->fecha_inicio = $todayDate;
+            $prestamo->fecha_fin = $endDate;
+            $prestamo->estado = false;
+            $prestamo->codigo = $codigo->id;
+            $prestamo->save();
+            }
         return redirect()->route('codigo.show');
-    }
+        }
+
+        public function show()
+        {
+            return view('carrito.listado_codigo');
+        }
     
 
 }
