@@ -31,7 +31,7 @@ class CarritoController extends Controller
         //$carritos = Carrito::all()->where('user_id', Auth::user()->id );
 
                                                     //$carritos = Categoria::with('subcategoria')->get();
-        $carritos = Carrito::with(['ejemplar', 'user'])->where('user_id', Auth::user()->id )->get();
+        $carritos = Carrito::with(['ejemplar', 'user', 'ejemplar.libro'])->where('user_id', Auth::user()->id )->get();
         //dd($carritos);
         $libros = Libro::all();
         //dd(Auth::user()->id);

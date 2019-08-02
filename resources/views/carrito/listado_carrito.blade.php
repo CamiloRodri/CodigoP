@@ -60,11 +60,12 @@
                                         {{ $carrito->ejemplar_id }} 
                                     </td>
                                     <td class="center">
-                                        @foreach($libros as $libro)
+                                        {{ $carrito->ejemplar->libro->titulo }}
+                                        {{-- @foreach($libros as $libro)
                                             @if($libro->id == $carrito->ejemplar->libro_id)
                                                 {{ $libro->titulo }}
                                             @endif
-                                        @endforeach
+                                        @endforeach --}}
                                     </td>
                                     <td class="center">
                                         {{ $carrito->ejemplar->codigo }}
@@ -73,7 +74,6 @@
                                         {{ $carrito->user_id }} 
                                     </td>
                                 </tr >
-                                
                             @endforeach
                             
                         </tbody>
