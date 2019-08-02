@@ -44,6 +44,8 @@
                             <tr>
                                 <th style="visibility: hidden"> Numero </th>
                                 <th> Ejemplar </th>
+                                <th> Libro </th>
+                                <th> Ejemplar </th>
                                 <th> Usuario </th>
                             </tr>
                         </thead>
@@ -56,6 +58,16 @@
                                     </td>   
                                     <td class="center"> 
                                         {{ $carrito->ejemplar_id }} 
+                                    </td>
+                                    <td class="center">
+                                        @foreach($libros as $libro)
+                                            @if($libro->id == $carrito->ejemplar->libro_id)
+                                                {{ $libro->titulo }}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td class="center">
+                                        {{ $carrito->ejemplar->codigo }}
                                     </td>
                                     <td class="center"> 
                                         {{ $carrito->user_id }} 

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Carrito;
 use App\Ejemplar;
+use App\SubCategoria;
+use App\Categoria;
+use App\Libro;
 use Illuminate\Support\Facades\Auth;
 
 class CarritoController extends Controller
@@ -21,13 +24,18 @@ class CarritoController extends Controller
     
     public function index()
     {
-        //
-        $carritos = Carrito::all();
-        $users = User::all();
-        $ejemplares = Ejemplar::all();
-        dd(Auth::user()->id)
-        $libros = Libros::all();
-        return view('carrito.listado_carrito', compact('carritos'));
+
+        $ejemplar = new Ejemplar;
+        $libro = new Libro;
+        //$subcateg = SubCategoria::with(['categoria'])->get();
+        //$carritos = Carrito::all()->where('user_id', Auth::user()->id );
+
+                                                    //$carritos = Categoria::with('subcategoria')->get();
+        $carritos = Carrito::with(['ejemplar', 'user'])->where('user_id', Auth::user()->id )->get();
+        //dd($carritos);
+        $libros = Libro::all();
+        //dd(Auth::user()->id);
+        return view('carrito.listado_carrito', compact('carritos', 'libros'));
     }
 
     public function store()

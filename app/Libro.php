@@ -12,4 +12,9 @@ class Libro extends Model
     protected $fillable = [
         'titulo', 'paginas', 'foto', 'descripcion', 'calificacion', 'autor_id', 'fecha_publicacion'
     ];
+
+    public function ejemplar()
+    {
+    	return $this->hasMany(Ejemplar::class);
+    }
 }

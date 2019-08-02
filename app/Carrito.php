@@ -11,5 +11,15 @@ class Carrito extends Model
 
    	protected $fillable = [
 		'ejemplar_id', 'user_id'
-   	];    
+   	]; 
+
+   	public function ejemplar()
+	{
+	   return $this->belongsTo(Ejemplar::class);
+	}   
+
+	public function user()
+	{
+	   return $this->belongsTo(User::class);
+	}
 }

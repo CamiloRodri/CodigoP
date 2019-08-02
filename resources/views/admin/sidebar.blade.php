@@ -111,7 +111,7 @@
             </li>
             @if(Entrust::can('ver-carrito'))
             <li class="nav-item  ">
-                <a href="javascript:;" class="nav-link nav-toggle">
+                <a href="{{ route('carrito.list') }}" class="nav-link nav-toggle">
                     <i class="icon-basket"></i>
                     <span class="title">Carrito</span>
                     <span class="arrow"></span>
