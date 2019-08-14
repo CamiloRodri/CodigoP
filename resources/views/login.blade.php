@@ -66,11 +66,13 @@
 
                             <div class="col-xs-6">
                                 <input class="form-control form-control-solid placeholder-no-fix form-group" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Contraseña" required autocomplete="current-password" >
-
+                            </div>
+                            <div class="col-xs-12">
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
+                                    <br>
                                 @endif
                             </div>
                         </div>
@@ -87,28 +89,21 @@
                             </div>
                             <div class="col-sm-8 text-right">
                                 
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="forgot-password" href="{{ route('password.request') }}">
                                         {{ __('¿Olvido su Contraseña ?') }}
                                     </a>
-                                @endif
-
+                                @endif --}}
+                                <div class="forgot-password">
+                                        <a href="javascript:;" id="forget-password" class="forget-password">¿Olvido su Contraseña ?</a>
+                                </div>
                                 <button type="submit" class="btn green">
                                     {{ __('Ingresar') }}
                                 </button>
-
-                                
                             </div>
-
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            
                         </div>
                     </form>
-                    {{-- 
-                    |---------------------------------------------------------
-                     --}}
+
                     <form class="forget-form" action="javascript:;" method="post">
                             <h3 class="font-green">¿Olvido su Contraseña ?</h3>
                             <p> Introduzca su dirección de correo electrónico a continuación para restablecer su contraseña. </p>
