@@ -50,6 +50,8 @@ class CarritoController extends Controller
 
     public function generate()
     {
+        // $cod = 'afasfaga0';
+        // return redirect()->route('codigo.show', ['codigo' => $cod]);
         $carritos = Carrito::with(['ejemplar', 'user', 'ejemplar.libro'])->where('user_id', Auth::user()->id )->get();
         //$now = new \DateTime();
         $todayDate = Carbon::now();
@@ -59,6 +61,13 @@ class CarritoController extends Controller
         $endDate = $date->addDays(7);  
         $endDate = $date->format('d-m-Y');
         $random = Str::random();
+
+        $codigo = new Codigo;
+        $codigo->codigo = $random;
+        $codigo->save();
+
+        $cod = $codigo->codigo;
+
         foreach ($carritos as $carrito) {
             $ejemplarup = Ejemplar::where('id', $carrito->ejemplar_id)->first();
             $ejemplarup->estado_id = '3';
@@ -66,10 +75,6 @@ class CarritoController extends Controller
 
             $carritode = Carrito::all()->where('id', $carrito->id);
             $carrito->delete();
-
-            $codigo = new Codigo;
-            $codigo->codigo = $random;
-            $codigo->save();
 
             $prestamo = new Prestamo;  
             $prestamo->user_id = $carrito->user_id;
@@ -80,12 +85,13 @@ class CarritoController extends Controller
             $prestamo->codigo = $codigo->id;
             $prestamo->save();
             }
-        return redirect()->route('codigo.show');
+            
+        return redirect()->route('codigo.show', ['codigo' => $cod]);
         }
 
-        public function show()
+        public function show(String $codigo)
         {
-            return view('carrito.listado_codigo');
+            return view('carrito.listado_codigo', compact('codigo'));
         }
     
 

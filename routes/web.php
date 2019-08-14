@@ -130,5 +130,5 @@ Route::get('/carrito', 'CarritoController@index')->name('carrito.list');
 
 Route::get('/codigo', 'CarritoController@generate')->name('codigo.generate');
 
-Route::get('/codigoshow', 'CarritoController@show')->name('codigo.show');
+Route::get('/codigoshow/{codigo}', 'CarritoController@show')->name('codigo.show');
 
