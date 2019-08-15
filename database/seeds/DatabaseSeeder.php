@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     	$this->truncateTables([
     		'users', 'autor', 'carrito', 'ejemplar', 'estado_ejemplar', 'informacion', 'libro',
             'permissions', 'permission_role', 'prestamo', 'roles', 'role_user', 'categoria', 
-            'subcategoria' , 'codigos'
+            'subcategoria' , 'codigos', 'estado_prestamo'
 
       	]);
 
@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SubCategoriaSeeder::class);
         $this->call(LibroSeeder::class);
         $this->call(EstadoEjemplarSeeder::class);
+        $this->call(EstadoPrestamoSeeder::class);
         $this->call(EjemplarSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(PermissionSeeder::class);

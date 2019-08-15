@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Carrito;
 use App\Ejemplar;
+use App\EstadoPrestamo;
 use App\Prestamo;
 use App\Libro;
 use App\Codigo;
@@ -76,12 +77,13 @@ class CarritoController extends Controller
             $carritode = Carrito::all()->where('id', $carrito->id);
             $carrito->delete();
 
+            $estadoporreclamar = EstadoPrestamo::where('estado', 'Por Reclamar')->value('id');
             $prestamo = new Prestamo;  
             $prestamo->user_id = $carrito->user_id;
             $prestamo->ejemplar_id = $carrito->ejemplar_id;
             $prestamo->fecha_inicio = $todayDate;
             $prestamo->fecha_fin = $endDate;
-            $prestamo->estado = false;
+            $prestamo->estado = $estadoporreclamar;
             $prestamo->codigo = $codigo->id;
             $prestamo->save();
             }

@@ -13,7 +13,7 @@ class CreatePrestamoTable extends Migration
      */
     public function up()
     {
-        //Estado -> 0:Por Reclamar  °°   1:Reclamado
+        //Estado -> 0:Por Reclamar  °°   1:Reclamado  °°  2:Devuelto
         Schema::create('prestamo', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('ejemplar_id');
@@ -22,7 +22,8 @@ class CreatePrestamoTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');  
             $table->string('fecha_inicio');
             $table->string('fecha_fin');
-            $table->boolean('estado');
+            $table->unsignedInteger('estado');
+            $table->foreign('estado')->references('id')->on('estado_prestamo');
             $table->unsignedInteger('codigo');
             $table->foreign('codigo')->references('id')->on('codigos');
             $table->timestamps();
