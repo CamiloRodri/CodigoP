@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Autor;
+use \App\Models\Autor;
 use App\Libro;
 use Image;
 

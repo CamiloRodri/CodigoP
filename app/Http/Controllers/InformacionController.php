@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Informacion;
+use App\Models\Informacion;
 
 class InformacionController extends Controller
 {

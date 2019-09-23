@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Libro;
-use App\Autor;
+use App\Models\Autor;
 use App\Ejemplar;
 use Image;
 
