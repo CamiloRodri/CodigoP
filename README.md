@@ -1,7 +1,7 @@
 
-# Biblioteca - UdeC Facatativá
+# Apoyo UdeC Facatativá
 
-Sistema de Información para el Apoyo de la Biblioteca Universitaria - UdeC Facatativá
+Sistema de Información para el Apoyo de UdeC Facatativá
 
 ### Requerimientos
 
